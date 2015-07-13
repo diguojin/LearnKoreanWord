@@ -1,0 +1,793 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8805BD861B44E6E400BDC343 /* ChapterWordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805BD851B44E6E400BDC343 /* ChapterWordListViewController.m */; };
+		8805BD891B44E8E700BDC343 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805BD881B44E8E700BDC343 /* Word.m */; };
+		8846142C1B3E3FF400FE3261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8846142B1B3E3FF400FE3261 /* main.m */; };
+		8846142F1B3E3FF400FE3261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8846142E1B3E3FF400FE3261 /* AppDelegate.m */; };
+		884614311B3E3FF400FE3261 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884614301B3E3FF400FE3261 /* Images.xcassets */; };
+		884614341B3E3FF400FE3261 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884614321B3E3FF400FE3261 /* LaunchScreen.xib */; };
+		884614401B3E3FF400FE3261 /* LearnKoreanWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8846143F1B3E3FF400FE3261 /* LearnKoreanWordTests.m */; };
+		884614641B40447000FE3261 /* MyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614631B40447000FE3261 /* MyPageViewController.m */; };
+		884614671B40448B00FE3261 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614661B40448B00FE3261 /* ReviewViewController.m */; };
+		8846146A1B40F3C600FE3261 /* DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614691B40F3C600FE3261 /* DB.m */; };
+		8846147E1B42330400FE3261 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614741B42330400FE3261 /* FMDatabase.m */; };
+		8846147F1B42330400FE3261 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614761B42330400FE3261 /* FMDatabaseAdditions.m */; };
+		884614801B42330400FE3261 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614781B42330400FE3261 /* FMDatabasePool.m */; };
+		884614811B42330400FE3261 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8846147A1B42330400FE3261 /* FMDatabaseQueue.m */; };
+		884614821B42330400FE3261 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8846147D1B42330400FE3261 /* FMResultSet.m */; };
+		884614841B423BDD00FE3261 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 884614831B423BDD00FE3261 /* libsqlite3.dylib */; };
+		884614871B42422600FE3261 /* Lexicon.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614861B42422600FE3261 /* Lexicon.m */; };
+		884614951B42834700FE3261 /* LexiconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614931B42834700FE3261 /* LexiconViewController.m */; };
+		8846149A1B42855300FE3261 /* LexiconViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614981B42855300FE3261 /* LexiconViewCell.m */; };
+		8846149B1B42855300FE3261 /* LexiconViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884614991B42855300FE3261 /* LexiconViewCell.xib */; };
+		8846149E1B43F4CA00FE3261 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8846149D1B43F4CA00FE3261 /* ChapterViewController.m */; };
+		884614A11B43F82E00FE3261 /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614A01B43F82E00FE3261 /* Chapter.m */; };
+		884614A51B43FD3400FE3261 /* ChapterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614A31B43FD3400FE3261 /* ChapterViewCell.m */; };
+		884614A61B43FD3400FE3261 /* ChapterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884614A41B43FD3400FE3261 /* ChapterViewCell.xib */; };
+		88A8F6841B452AAD00277EEC /* WordListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6821B452AAD00277EEC /* WordListViewCell.m */; };
+		88A8F6851B452AAD00277EEC /* WordListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A8F6831B452AAD00277EEC /* WordListViewCell.xib */; };
+		88A8F68B1B4634A200277EEC /* BigButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F68A1B4634A200277EEC /* BigButtonView.m */; };
+		88A8F6941B467EB800277EEC /* ChooseWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6931B467EB800277EEC /* ChooseWordViewController.m */; };
+		88A8F6971B467F5000277EEC /* SpellingWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6961B467F5000277EEC /* SpellingWordViewController.m */; };
+		88A8F69A1B46866800277EEC /* ChooseWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6991B46866800277EEC /* ChooseWordView.m */; };
+		88A8F69D1B46AA6200277EEC /* WordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F69C1B46AA6200277EEC /* WordList.m */; };
+		88A8F6A31B4A6AE900277EEC /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6A21B4A6AE900277EEC /* UIView+Shadow.m */; };
+		88A8F6A61B4A755100277EEC /* CRGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6A51B4A755100277EEC /* CRGradientLabel.m */; };
+		88FA4BA21B500F9B00321771 /* LKTDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BA11B500F9B00321771 /* LKTDB.db */; };
+		88FA4BA31B500F9B00321771 /* LKTDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BA11B500F9B00321771 /* LKTDB.db */; };
+		88FA4BA71B5010E700321771 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BA61B5010E700321771 /* MBProgressHUD.m */; };
+		88FA4BA81B5010E700321771 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BA61B5010E700321771 /* MBProgressHUD.m */; };
+		88FA4BAB1B50139500321771 /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BAA1B50139500321771 /* UIViewController+MBProgressHUD.m */; };
+		88FA4BAC1B50139500321771 /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BAA1B50139500321771 /* UIViewController+MBProgressHUD.m */; };
+		88FA4BB01B53684B00321771 /* MyPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BAE1B53684B00321771 /* MyPageTableViewCell.m */; };
+		88FA4BB11B53684B00321771 /* MyPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BAE1B53684B00321771 /* MyPageTableViewCell.m */; };
+		88FA4BB21B53684B00321771 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */; };
+		88FA4BB31B53684B00321771 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8846143A1B3E3FF400FE3261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8846141E1B3E3FF400FE3261 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 884614251B3E3FF400FE3261;
+			remoteInfo = LearnKoreanWord;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8805BD841B44E6E400BDC343 /* ChapterWordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterWordListViewController.h; sourceTree = "<group>"; };
+		8805BD851B44E6E400BDC343 /* ChapterWordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterWordListViewController.m; sourceTree = "<group>"; };
+		8805BD871B44E8E700BDC343 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		8805BD881B44E8E700BDC343 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
+		884614261B3E3FF400FE3261 /* LearnKoreanWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnKoreanWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8846142A1B3E3FF400FE3261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8846142B1B3E3FF400FE3261 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8846142D1B3E3FF400FE3261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		8846142E1B3E3FF400FE3261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		884614301B3E3FF400FE3261 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		884614331B3E3FF400FE3261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		884614391B3E3FF400FE3261 /* LearnKoreanWordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnKoreanWordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8846143E1B3E3FF400FE3261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8846143F1B3E3FF400FE3261 /* LearnKoreanWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnKoreanWordTests.m; sourceTree = "<group>"; };
+		884614621B40447000FE3261 /* MyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageViewController.h; sourceTree = "<group>"; };
+		884614631B40447000FE3261 /* MyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageViewController.m; sourceTree = "<group>"; };
+		884614651B40448B00FE3261 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
+		884614661B40448B00FE3261 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
+		884614681B40F3C600FE3261 /* DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DB.h; sourceTree = "<group>"; };
+		884614691B40F3C600FE3261 /* DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DB.m; sourceTree = "<group>"; };
+		884614731B42330400FE3261 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		884614741B42330400FE3261 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		884614751B42330400FE3261 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		884614761B42330400FE3261 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		884614771B42330400FE3261 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		884614781B42330400FE3261 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		884614791B42330400FE3261 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8846147A1B42330400FE3261 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8846147B1B42330400FE3261 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8846147C1B42330400FE3261 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8846147D1B42330400FE3261 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		884614831B423BDD00FE3261 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		884614851B42422600FE3261 /* Lexicon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lexicon.h; sourceTree = "<group>"; };
+		884614861B42422600FE3261 /* Lexicon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lexicon.m; sourceTree = "<group>"; };
+		884614881B42469C00FE3261 /* PrefixHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		884614891B4246B300FE3261 /* APIHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIHeader.h; sourceTree = "<group>"; };
+		8846148A1B4246BC00FE3261 /* APPHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPHeader.h; sourceTree = "<group>"; };
+		8846148B1B42470600FE3261 /* INHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INHeader.h; sourceTree = "<group>"; };
+		884614921B42834700FE3261 /* LexiconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LexiconViewController.h; sourceTree = "<group>"; };
+		884614931B42834700FE3261 /* LexiconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LexiconViewController.m; sourceTree = "<group>"; };
+		884614971B42855300FE3261 /* LexiconViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LexiconViewCell.h; sourceTree = "<group>"; };
+		884614981B42855300FE3261 /* LexiconViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LexiconViewCell.m; sourceTree = "<group>"; };
+		884614991B42855300FE3261 /* LexiconViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LexiconViewCell.xib; sourceTree = "<group>"; };
+		8846149C1B43F4CA00FE3261 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
+		8846149D1B43F4CA00FE3261 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
+		8846149F1B43F82E00FE3261 /* Chapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapter.h; sourceTree = "<group>"; };
+		884614A01B43F82E00FE3261 /* Chapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapter.m; sourceTree = "<group>"; };
+		884614A21B43FD3400FE3261 /* ChapterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewCell.h; sourceTree = "<group>"; };
+		884614A31B43FD3400FE3261 /* ChapterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewCell.m; sourceTree = "<group>"; };
+		884614A41B43FD3400FE3261 /* ChapterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterViewCell.xib; sourceTree = "<group>"; };
+		88A8F6811B452AAD00277EEC /* WordListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListViewCell.h; sourceTree = "<group>"; };
+		88A8F6821B452AAD00277EEC /* WordListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListViewCell.m; sourceTree = "<group>"; };
+		88A8F6831B452AAD00277EEC /* WordListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordListViewCell.xib; sourceTree = "<group>"; };
+		88A8F6891B4634A200277EEC /* BigButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigButtonView.h; sourceTree = "<group>"; };
+		88A8F68A1B4634A200277EEC /* BigButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigButtonView.m; sourceTree = "<group>"; };
+		88A8F6921B467EB800277EEC /* ChooseWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseWordViewController.h; sourceTree = "<group>"; };
+		88A8F6931B467EB800277EEC /* ChooseWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseWordViewController.m; sourceTree = "<group>"; };
+		88A8F6951B467F5000277EEC /* SpellingWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpellingWordViewController.h; sourceTree = "<group>"; };
+		88A8F6961B467F5000277EEC /* SpellingWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpellingWordViewController.m; sourceTree = "<group>"; };
+		88A8F6981B46866800277EEC /* ChooseWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseWordView.h; sourceTree = "<group>"; };
+		88A8F6991B46866800277EEC /* ChooseWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseWordView.m; sourceTree = "<group>"; };
+		88A8F69B1B46AA6200277EEC /* WordList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordList.h; sourceTree = "<group>"; };
+		88A8F69C1B46AA6200277EEC /* WordList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordList.m; sourceTree = "<group>"; };
+		88A8F6A11B4A6AE900277EEC /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
+		88A8F6A21B4A6AE900277EEC /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
+		88A8F6A41B4A755100277EEC /* CRGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGradientLabel.h; sourceTree = "<group>"; };
+		88A8F6A51B4A755100277EEC /* CRGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRGradientLabel.m; sourceTree = "<group>"; };
+		88FA4BA11B500F9B00321771 /* LKTDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = LKTDB.db; sourceTree = "<group>"; };
+		88FA4BA51B5010E700321771 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		88FA4BA61B5010E700321771 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		88FA4BA91B50139500321771 /* UIViewController+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBProgressHUD.h"; sourceTree = "<group>"; };
+		88FA4BAA1B50139500321771 /* UIViewController+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBProgressHUD.m"; sourceTree = "<group>"; };
+		88FA4BAD1B53684B00321771 /* MyPageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageTableViewCell.h; sourceTree = "<group>"; };
+		88FA4BAE1B53684B00321771 /* MyPageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageTableViewCell.m; sourceTree = "<group>"; };
+		88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPageTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		884614231B3E3FF400FE3261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				884614841B423BDD00FE3261 /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		884614361B3E3FF400FE3261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8846141D1B3E3FF400FE3261 = {
+			isa = PBXGroup;
+			children = (
+				884614831B423BDD00FE3261 /* libsqlite3.dylib */,
+				884614281B3E3FF400FE3261 /* LearnKoreanWord */,
+				8846143C1B3E3FF400FE3261 /* LearnKoreanWordTests */,
+				884614271B3E3FF400FE3261 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		884614271B3E3FF400FE3261 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				884614261B3E3FF400FE3261 /* LearnKoreanWord.app */,
+				884614391B3E3FF400FE3261 /* LearnKoreanWordTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		884614281B3E3FF400FE3261 /* LearnKoreanWord */ = {
+			isa = PBXGroup;
+			children = (
+				8846144A1B3E40E000FE3261 /* BaseClass */,
+				8846144B1B3E40E000FE3261 /* EnNetwork */,
+				8846144C1B3E40E000FE3261 /* Helper */,
+				8846144D1B3E40E000FE3261 /* Marco */,
+				8846144E1B3E40E000FE3261 /* Resource */,
+				8846144F1B3E40E000FE3261 /* TheThird */,
+				884614491B3E405400FE3261 /* Application */,
+				884614301B3E3FF400FE3261 /* Images.xcassets */,
+				884614321B3E3FF400FE3261 /* LaunchScreen.xib */,
+				884614291B3E3FF400FE3261 /* Supporting Files */,
+			);
+			path = LearnKoreanWord;
+			sourceTree = "<group>";
+		};
+		884614291B3E3FF400FE3261 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8846142A1B3E3FF400FE3261 /* Info.plist */,
+				8846142B1B3E3FF400FE3261 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8846143C1B3E3FF400FE3261 /* LearnKoreanWordTests */ = {
+			isa = PBXGroup;
+			children = (
+				8846143F1B3E3FF400FE3261 /* LearnKoreanWordTests.m */,
+				8846143D1B3E3FF400FE3261 /* Supporting Files */,
+			);
+			path = LearnKoreanWordTests;
+			sourceTree = "<group>";
+		};
+		8846143D1B3E3FF400FE3261 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8846143E1B3E3FF400FE3261 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		884614491B3E405400FE3261 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8846142D1B3E3FF400FE3261 /* AppDelegate.h */,
+				8846142E1B3E3FF400FE3261 /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8846144A1B3E40E000FE3261 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				884614501B40071D00FE3261 /* Lexicon */,
+				884614511B40071D00FE3261 /* MyPage */,
+				884614521B40071D00FE3261 /* Review */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		8846144B1B3E40E000FE3261 /* EnNetwork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EnNetwork;
+			sourceTree = "<group>";
+		};
+		8846144C1B3E40E000FE3261 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				88FA4BA91B50139500321771 /* UIViewController+MBProgressHUD.h */,
+				88FA4BAA1B50139500321771 /* UIViewController+MBProgressHUD.m */,
+				88A8F6A41B4A755100277EEC /* CRGradientLabel.h */,
+				88A8F6A51B4A755100277EEC /* CRGradientLabel.m */,
+				88A8F6A11B4A6AE900277EEC /* UIView+Shadow.h */,
+				88A8F6A21B4A6AE900277EEC /* UIView+Shadow.m */,
+				884614681B40F3C600FE3261 /* DB.h */,
+				884614691B40F3C600FE3261 /* DB.m */,
+				88A8F6891B4634A200277EEC /* BigButtonView.h */,
+				88A8F68A1B4634A200277EEC /* BigButtonView.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		8846144D1B3E40E000FE3261 /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				884614881B42469C00FE3261 /* PrefixHeader.h */,
+				884614891B4246B300FE3261 /* APIHeader.h */,
+				8846148A1B4246BC00FE3261 /* APPHeader.h */,
+				8846148B1B42470600FE3261 /* INHeader.h */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		8846144E1B3E40E000FE3261 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				88FA4BA11B500F9B00321771 /* LKTDB.db */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8846144F1B3E40E000FE3261 /* TheThird */ = {
+			isa = PBXGroup;
+			children = (
+				88FA4BA41B5010E700321771 /* MBProgressHUD */,
+				884614721B42330400FE3261 /* fmdb */,
+			);
+			path = TheThird;
+			sourceTree = "<group>";
+		};
+		884614501B40071D00FE3261 /* Lexicon */ = {
+			isa = PBXGroup;
+			children = (
+				884614561B40077000FE3261 /* Controllers */,
+				884614591B40077000FE3261 /* Models */,
+				8846145A1B40077000FE3261 /* Views */,
+			);
+			path = Lexicon;
+			sourceTree = "<group>";
+		};
+		884614511B40071D00FE3261 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				8846145C1B40443C00FE3261 /* Controllers */,
+				8846145D1B40443C00FE3261 /* Models */,
+				8846145E1B40443C00FE3261 /* Views */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		884614521B40071D00FE3261 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				8846145F1B40444C00FE3261 /* Controllers */,
+				884614601B40444C00FE3261 /* Models */,
+				884614611B40444C00FE3261 /* Views */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		884614561B40077000FE3261 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				884614921B42834700FE3261 /* LexiconViewController.h */,
+				884614931B42834700FE3261 /* LexiconViewController.m */,
+				8846149C1B43F4CA00FE3261 /* ChapterViewController.h */,
+				8846149D1B43F4CA00FE3261 /* ChapterViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		884614591B40077000FE3261 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				884614851B42422600FE3261 /* Lexicon.h */,
+				884614861B42422600FE3261 /* Lexicon.m */,
+				8846149F1B43F82E00FE3261 /* Chapter.h */,
+				884614A01B43F82E00FE3261 /* Chapter.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8846145A1B40077000FE3261 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				884614971B42855300FE3261 /* LexiconViewCell.h */,
+				884614981B42855300FE3261 /* LexiconViewCell.m */,
+				884614991B42855300FE3261 /* LexiconViewCell.xib */,
+				884614A21B43FD3400FE3261 /* ChapterViewCell.h */,
+				884614A31B43FD3400FE3261 /* ChapterViewCell.m */,
+				884614A41B43FD3400FE3261 /* ChapterViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8846145C1B40443C00FE3261 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				884614621B40447000FE3261 /* MyPageViewController.h */,
+				884614631B40447000FE3261 /* MyPageViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8846145D1B40443C00FE3261 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8846145E1B40443C00FE3261 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88FA4BAD1B53684B00321771 /* MyPageTableViewCell.h */,
+				88FA4BAE1B53684B00321771 /* MyPageTableViewCell.m */,
+				88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8846145F1B40444C00FE3261 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				884614651B40448B00FE3261 /* ReviewViewController.h */,
+				884614661B40448B00FE3261 /* ReviewViewController.m */,
+				8805BD841B44E6E400BDC343 /* ChapterWordListViewController.h */,
+				8805BD851B44E6E400BDC343 /* ChapterWordListViewController.m */,
+				88A8F6921B467EB800277EEC /* ChooseWordViewController.h */,
+				88A8F6931B467EB800277EEC /* ChooseWordViewController.m */,
+				88A8F6951B467F5000277EEC /* SpellingWordViewController.h */,
+				88A8F6961B467F5000277EEC /* SpellingWordViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		884614601B40444C00FE3261 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8805BD871B44E8E700BDC343 /* Word.h */,
+				8805BD881B44E8E700BDC343 /* Word.m */,
+				88A8F69B1B46AA6200277EEC /* WordList.h */,
+				88A8F69C1B46AA6200277EEC /* WordList.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		884614611B40444C00FE3261 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88A8F6811B452AAD00277EEC /* WordListViewCell.h */,
+				88A8F6821B452AAD00277EEC /* WordListViewCell.m */,
+				88A8F6831B452AAD00277EEC /* WordListViewCell.xib */,
+				88A8F6981B46866800277EEC /* ChooseWordView.h */,
+				88A8F6991B46866800277EEC /* ChooseWordView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		884614721B42330400FE3261 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				884614731B42330400FE3261 /* FMDatabase.h */,
+				884614741B42330400FE3261 /* FMDatabase.m */,
+				884614751B42330400FE3261 /* FMDatabaseAdditions.h */,
+				884614761B42330400FE3261 /* FMDatabaseAdditions.m */,
+				884614771B42330400FE3261 /* FMDatabasePool.h */,
+				884614781B42330400FE3261 /* FMDatabasePool.m */,
+				884614791B42330400FE3261 /* FMDatabaseQueue.h */,
+				8846147A1B42330400FE3261 /* FMDatabaseQueue.m */,
+				8846147B1B42330400FE3261 /* FMDB.h */,
+				8846147C1B42330400FE3261 /* FMResultSet.h */,
+				8846147D1B42330400FE3261 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		88FA4BA41B5010E700321771 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				88FA4BA51B5010E700321771 /* MBProgressHUD.h */,
+				88FA4BA61B5010E700321771 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		884614251B3E3FF400FE3261 /* LearnKoreanWord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 884614431B3E3FF400FE3261 /* Build configuration list for PBXNativeTarget "LearnKoreanWord" */;
+			buildPhases = (
+				884614221B3E3FF400FE3261 /* Sources */,
+				884614231B3E3FF400FE3261 /* Frameworks */,
+				884614241B3E3FF400FE3261 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LearnKoreanWord;
+			productName = LearnKoreanWord;
+			productReference = 884614261B3E3FF400FE3261 /* LearnKoreanWord.app */;
+			productType = "com.apple.product-type.application";
+		};
+		884614381B3E3FF400FE3261 /* LearnKoreanWordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 884614461B3E3FF400FE3261 /* Build configuration list for PBXNativeTarget "LearnKoreanWordTests" */;
+			buildPhases = (
+				884614351B3E3FF400FE3261 /* Sources */,
+				884614361B3E3FF400FE3261 /* Frameworks */,
+				884614371B3E3FF400FE3261 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8846143B1B3E3FF400FE3261 /* PBXTargetDependency */,
+			);
+			name = LearnKoreanWordTests;
+			productName = LearnKoreanWordTests;
+			productReference = 884614391B3E3FF400FE3261 /* LearnKoreanWordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8846141E1B3E3FF400FE3261 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = diguojin;
+				TargetAttributes = {
+					884614251B3E3FF400FE3261 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					884614381B3E3FF400FE3261 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 884614251B3E3FF400FE3261;
+					};
+				};
+			};
+			buildConfigurationList = 884614211B3E3FF400FE3261 /* Build configuration list for PBXProject "LearnKoreanWord" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8846141D1B3E3FF400FE3261;
+			productRefGroup = 884614271B3E3FF400FE3261 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				884614251B3E3FF400FE3261 /* LearnKoreanWord */,
+				884614381B3E3FF400FE3261 /* LearnKoreanWordTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		884614241B3E3FF400FE3261 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88A8F6851B452AAD00277EEC /* WordListViewCell.xib in Resources */,
+				8846149B1B42855300FE3261 /* LexiconViewCell.xib in Resources */,
+				884614341B3E3FF400FE3261 /* LaunchScreen.xib in Resources */,
+				88FA4BB21B53684B00321771 /* MyPageTableViewCell.xib in Resources */,
+				88FA4BA21B500F9B00321771 /* LKTDB.db in Resources */,
+				884614311B3E3FF400FE3261 /* Images.xcassets in Resources */,
+				884614A61B43FD3400FE3261 /* ChapterViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		884614371B3E3FF400FE3261 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88FA4BB31B53684B00321771 /* MyPageTableViewCell.xib in Resources */,
+				88FA4BA31B500F9B00321771 /* LKTDB.db in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		884614221B3E3FF400FE3261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				884614671B40448B00FE3261 /* ReviewViewController.m in Sources */,
+				8846142F1B3E3FF400FE3261 /* AppDelegate.m in Sources */,
+				8846147E1B42330400FE3261 /* FMDatabase.m in Sources */,
+				884614951B42834700FE3261 /* LexiconViewController.m in Sources */,
+				88A8F6841B452AAD00277EEC /* WordListViewCell.m in Sources */,
+				88A8F69D1B46AA6200277EEC /* WordList.m in Sources */,
+				8846149E1B43F4CA00FE3261 /* ChapterViewController.m in Sources */,
+				88A8F6A61B4A755100277EEC /* CRGradientLabel.m in Sources */,
+				8846149A1B42855300FE3261 /* LexiconViewCell.m in Sources */,
+				884614801B42330400FE3261 /* FMDatabasePool.m in Sources */,
+				88A8F69A1B46866800277EEC /* ChooseWordView.m in Sources */,
+				884614811B42330400FE3261 /* FMDatabaseQueue.m in Sources */,
+				88FA4BAB1B50139500321771 /* UIViewController+MBProgressHUD.m in Sources */,
+				8805BD861B44E6E400BDC343 /* ChapterWordListViewController.m in Sources */,
+				88FA4BA71B5010E700321771 /* MBProgressHUD.m in Sources */,
+				884614871B42422600FE3261 /* Lexicon.m in Sources */,
+				8846142C1B3E3FF400FE3261 /* main.m in Sources */,
+				884614641B40447000FE3261 /* MyPageViewController.m in Sources */,
+				884614821B42330400FE3261 /* FMResultSet.m in Sources */,
+				8846146A1B40F3C600FE3261 /* DB.m in Sources */,
+				88A8F6A31B4A6AE900277EEC /* UIView+Shadow.m in Sources */,
+				88A8F68B1B4634A200277EEC /* BigButtonView.m in Sources */,
+				88A8F6971B467F5000277EEC /* SpellingWordViewController.m in Sources */,
+				88FA4BB01B53684B00321771 /* MyPageTableViewCell.m in Sources */,
+				884614A11B43F82E00FE3261 /* Chapter.m in Sources */,
+				884614A51B43FD3400FE3261 /* ChapterViewCell.m in Sources */,
+				8846147F1B42330400FE3261 /* FMDatabaseAdditions.m in Sources */,
+				8805BD891B44E8E700BDC343 /* Word.m in Sources */,
+				88A8F6941B467EB800277EEC /* ChooseWordViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		884614351B3E3FF400FE3261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				884614401B3E3FF400FE3261 /* LearnKoreanWordTests.m in Sources */,
+				88FA4BA81B5010E700321771 /* MBProgressHUD.m in Sources */,
+				88FA4BB11B53684B00321771 /* MyPageTableViewCell.m in Sources */,
+				88FA4BAC1B50139500321771 /* UIViewController+MBProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8846143B1B3E3FF400FE3261 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 884614251B3E3FF400FE3261 /* LearnKoreanWord */;
+			targetProxy = 8846143A1B3E3FF400FE3261 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		884614321B3E3FF400FE3261 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				884614331B3E3FF400FE3261 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		884614411B3E3FF400FE3261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		884614421B3E3FF400FE3261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		884614441B3E3FF400FE3261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/diguojin/Development/LearnKoreanWord/LearnKoreanWord/Marco/PrefixHeader.h;
+				INFOPLIST_FILE = LearnKoreanWord/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		884614451B3E3FF400FE3261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/diguojin/Development/LearnKoreanWord/LearnKoreanWord/Marco/PrefixHeader.h;
+				INFOPLIST_FILE = LearnKoreanWord/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		884614471B3E3FF400FE3261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LearnKoreanWordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearnKoreanWord.app/LearnKoreanWord";
+			};
+			name = Debug;
+		};
+		884614481B3E3FF400FE3261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LearnKoreanWordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearnKoreanWord.app/LearnKoreanWord";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		884614211B3E3FF400FE3261 /* Build configuration list for PBXProject "LearnKoreanWord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				884614411B3E3FF400FE3261 /* Debug */,
+				884614421B3E3FF400FE3261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		884614431B3E3FF400FE3261 /* Build configuration list for PBXNativeTarget "LearnKoreanWord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				884614441B3E3FF400FE3261 /* Debug */,
+				884614451B3E3FF400FE3261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		884614461B3E3FF400FE3261 /* Build configuration list for PBXNativeTarget "LearnKoreanWordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				884614471B3E3FF400FE3261 /* Debug */,
+				884614481B3E3FF400FE3261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8846141E1B3E3FF400FE3261 /* Project object */;
+}
