@@ -102,4 +102,18 @@
  */
 - (double)getMemoryParamWidthChapter:(NSInteger)chapter;
 
+/**
+ *  获取记忆词汇量
+ *
+ *  @return 词汇记忆量
+ */
+- (NSInteger)getMyWordsMemWordsCount;
+
+/**
+ *  获取今天记忆词汇量
+ *
+ *  @return 今天词汇记忆量
+ */
+- (NSInteger)getMyTodayWordsMemWordsCount;
+
 @end

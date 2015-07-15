@@ -20,4 +20,22 @@
     // Configure the view for the selected state
 }
 
+- (UIImageView *)iconImgView
+{
+    if (!_iconImgView) _iconImgView = [UIImageView new];
+    return _iconImgView;
+}
+
+- (UILabel *)titleLabel
+{
+    if (!_titleLabel) _titleLabel = [[UILabel alloc]init];
+    return _titleLabel;
+}
+
+- (UILabel *)NumberLabel
+{
+    if (!_NumberLabel) _NumberLabel = [[UILabel alloc]init];
+    return _NumberLabel;
+}
+
 @end

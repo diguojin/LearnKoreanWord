@@ -15,6 +15,7 @@
 #define kLexiconViewCell @"LexiconViewCell"
 #define kChapterViewCell @"ChapterViewCell"
 #define kChapterWordListViewCell @"WordListViewCell"
+#define kMyPageTavleViewCell @"MyPageTableViewCell"
 
 
 

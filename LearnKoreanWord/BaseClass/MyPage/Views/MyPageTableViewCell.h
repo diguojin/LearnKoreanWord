@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MyPageTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *iconImgView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *NumberLabel;
 
 @end

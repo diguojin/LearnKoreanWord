@@ -36,7 +36,7 @@
     TBC.viewControllers = @[naVC1 ,naVC2 ,naVC3];
     
     naVC1.title = @"词库";
-    naVC2.title = @"我的";
+    naVC2.title = @"统计";
     naVC3.title = @"复习";
     
     self.window.rootViewController = TBC;

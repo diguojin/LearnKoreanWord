@@ -10,4 +10,12 @@
 
 @interface MyPageViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, assign) NSInteger totalMemWordsCount;
+
+@property (nonatomic, strong) UIRefreshControl *pullDownRefreshControl;
+
+@property (nonatomic, strong) DB *mydb;
+
+@property (nonatomic, strong) UITableView *tableView;
+
 @end

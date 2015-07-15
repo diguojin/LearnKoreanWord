@@ -50,6 +50,8 @@
 		88FA4BB11B53684B00321771 /* MyPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BAE1B53684B00321771 /* MyPageTableViewCell.m */; };
 		88FA4BB21B53684B00321771 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */; };
 		88FA4BB31B53684B00321771 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */; };
+		88FA4BB61B53EFA100321771 /* UILabel+FlickerNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BB51B53EFA100321771 /* UILabel+FlickerNumber.m */; };
+		88FA4BB71B53EFA100321771 /* UILabel+FlickerNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BB51B53EFA100321771 /* UILabel+FlickerNumber.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,8 @@
 		88FA4BAD1B53684B00321771 /* MyPageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageTableViewCell.h; sourceTree = "<group>"; };
 		88FA4BAE1B53684B00321771 /* MyPageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageTableViewCell.m; sourceTree = "<group>"; };
 		88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPageTableViewCell.xib; sourceTree = "<group>"; };
+		88FA4BB41B53EFA100321771 /* UILabel+FlickerNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FlickerNumber.h"; sourceTree = "<group>"; };
+		88FA4BB51B53EFA100321771 /* UILabel+FlickerNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FlickerNumber.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,8 @@
 		8846144C1B3E40E000FE3261 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				88FA4BB41B53EFA100321771 /* UILabel+FlickerNumber.h */,
+				88FA4BB51B53EFA100321771 /* UILabel+FlickerNumber.m */,
 				88FA4BA91B50139500321771 /* UIViewController+MBProgressHUD.h */,
 				88FA4BAA1B50139500321771 /* UIViewController+MBProgressHUD.m */,
 				88A8F6A41B4A755100277EEC /* CRGradientLabel.h */,
@@ -558,6 +564,7 @@
 				8846142F1B3E3FF400FE3261 /* AppDelegate.m in Sources */,
 				8846147E1B42330400FE3261 /* FMDatabase.m in Sources */,
 				884614951B42834700FE3261 /* LexiconViewController.m in Sources */,
+				88FA4BB61B53EFA100321771 /* UILabel+FlickerNumber.m in Sources */,
 				88A8F6841B452AAD00277EEC /* WordListViewCell.m in Sources */,
 				88A8F69D1B46AA6200277EEC /* WordList.m in Sources */,
 				8846149E1B43F4CA00FE3261 /* ChapterViewController.m in Sources */,
@@ -594,6 +601,7 @@
 				88FA4BA81B5010E700321771 /* MBProgressHUD.m in Sources */,
 				88FA4BB11B53684B00321771 /* MyPageTableViewCell.m in Sources */,
 				88FA4BAC1B50139500321771 /* UIViewController+MBProgressHUD.m in Sources */,
+				88FA4BB71B53EFA100321771 /* UILabel+FlickerNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

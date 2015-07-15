@@ -233,7 +233,12 @@
 {
     [_fmdb open];
     if (chapter && memParam) {
-        [_fmdb executeUpdate:@"UPDATE word_list set rem_param = ? where chapter = ?", [NSNumber numberWithDouble:memParam], [NSNumber numberWithInteger: chapter]];
+        
+        NSTimeInterval timeStamp = [self getTimeStampNow];
+        
+        NSLog(@"%ld", (long)timeStamp);
+        
+        [_fmdb executeUpdate:@"UPDATE word_list set rem_param = ? , createTime = ? where chapter = ?", [NSNumber numberWithDouble:memParam], [NSNumber numberWithInteger:timeStamp], [NSNumber numberWithInteger: chapter]];
     }
     [_fmdb close];
 }
@@ -257,5 +262,98 @@
     [_fmdb close];
     return memParam;
 }
+
+/**
+ *  获取记忆词汇量
+ *
+ *  @return 词汇记忆量
+ */
+- (NSInteger)getMyWordsMemWordsCount
+{
+    NSInteger memWordsCount = 0;
+    [_fmdb open];
+    FMResultSet *rs = [_fmdb executeQuery:@"SELECT * from my_words"];
+    while ([rs next]) {
+        memWordsCount = [rs intForColumn:@"memWordsCount"];
+    }
+    [_fmdb close];
+    return memWordsCount;
+}
+
+
+/**
+ *  获取以当前系统时间为准的时间戳
+ *
+ *  @return 时间戳
+ */
+- (NSTimeInterval)getTimeStampNow
+{
+    NSDate *date = [NSDate date];
+    
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger interval = [timeZone secondsFromGMTForDate:date];
+    
+    NSDate *localDate = [date dateByAddingTimeInterval:interval];
+    
+    NSTimeInterval timeStamp = [localDate timeIntervalSince1970];
+    
+    return timeStamp;
+}
+
+
+/**
+ *  获取当天00点时刻的日期对象, 时区是当前系统时区
+ *
+ *  @return 00点时刻的日起对象
+ */
+- (NSDate *)zeroOfDate
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+    components.hour = 0;
+    components.minute = 0;
+    components.second = 0;
+    
+    // components.nanosecond = 0 not available in iOS
+    NSTimeInterval ts = (double)(int)[[calendar dateFromComponents:components] timeIntervalSince1970];
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:ts];
+    
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger interval = [timeZone secondsFromGMTForDate:date];
+    
+    NSDate *localDate = [date dateByAddingTimeInterval:interval];
+    
+    return localDate;
+}
+
+/**
+ *  获取今天记忆词汇量
+ *
+ *  @return 今天词汇记忆量
+ */
+- (NSInteger)getMyTodayWordsMemWordsCount
+{
+    NSInteger todayMemWordsCount = 0;
+    NSDate *todayZeroDate = [self zeroOfDate];
+    //NSLog(@"%@", todayZeroDate);
+    NSTimeInterval timeStamp = [todayZeroDate timeIntervalSince1970];
+    //NSLog(@"%ld",(long) timeStamp);
+    
+    [_fmdb open];
+    
+    //FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as todayCount from word_list where createTime > ?", [NSNumber numberWithLong:(long)timeStamp]];
+    FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as todayCount, rem_param from word_list where createTime > ? group by rem_param", [NSNumber numberWithLong:(long)timeStamp]];
+    while ([rs next]) {
+        double rem_param = [rs doubleForColumn:@"rem_param"];
+        todayMemWordsCount += (NSInteger)([rs intForColumn:@"todayCount"] * rem_param);
+    }
+    
+    [_fmdb close];
+    return todayMemWordsCount;
+}
+
 
 @end
