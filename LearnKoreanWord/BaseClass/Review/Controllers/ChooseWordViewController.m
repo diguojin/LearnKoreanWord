@@ -71,7 +71,7 @@
 }
 
 
-#warning 存在大量重复代码有待优化
+//#warning 存在大量重复代码有待优化
 
 //更新视图数据
 - (void)updateUI

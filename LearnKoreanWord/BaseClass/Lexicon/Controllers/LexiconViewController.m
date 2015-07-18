@@ -23,7 +23,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:kLexiconViewCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kLexiconViewCell];
     
     self.title = @"词库";
-    [DB setDBfileFromResourceFileName:kResourceDBFile targetName:kTargetDBFile];
     DB * mydb = [DB sharedDBWithName:kTargetDBFile];
     _lexiconsMArray = [[NSMutableArray alloc]init];
     _lexiconsMArray = [mydb getAllLexicon];

@@ -12,4 +12,6 @@
 @property (nonatomic, assign) NSInteger wordCount;
 @property (nonatomic, assign) NSInteger chapterId;
 @property (nonatomic, assign) NSInteger isLearned;
+@property (nonatomic, assign) double rem_param;
+@property (nonatomic, assign) NSInteger bookId;
 @end

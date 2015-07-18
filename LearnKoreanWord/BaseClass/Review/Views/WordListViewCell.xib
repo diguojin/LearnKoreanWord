@@ -25,10 +25,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhh-bL-g9l">
-                        <rect key="frame" x="94.5" y="47" width="126" height="21"/>
+                        <rect key="frame" x="12.5" y="47" width="294" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="6gz-i3-yWZ"/>
-                            <constraint firstAttribute="width" constant="126" id="vMx-IW-rwA"/>
+                            <constraint firstAttribute="width" constant="294" id="vMx-IW-rwA"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,7 +37,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="0Ev-ke-JE5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="BWo-nR-1Bc"/>
-                    <constraint firstItem="dhh-bL-g9l" firstAttribute="centerX" secondItem="0Ev-ke-JE5" secondAttribute="centerX" constant="-2.5" id="VFt-5b-cUt"/>
+                    <constraint firstItem="dhh-bL-g9l" firstAttribute="centerX" secondItem="0Ev-ke-JE5" secondAttribute="centerX" id="VFt-5b-cUt"/>
                     <constraint firstItem="dhh-bL-g9l" firstAttribute="top" secondItem="0Ev-ke-JE5" secondAttribute="bottom" constant="18" id="pBB-16-VC6"/>
                     <constraint firstAttribute="centerX" secondItem="0Ev-ke-JE5" secondAttribute="centerX" id="rIO-Pz-dZn"/>
                 </constraints>

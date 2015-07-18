@@ -98,12 +98,13 @@
 - (NSMutableArray *)getChapterInfoByLexiconID:(NSInteger)lexicionID
 {
     [_fmdb open];
-    FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as word_count, chapter from word_list where bookId = ? group by chapter", [NSNumber numberWithInteger:lexicionID]];
+    FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as word_count, chapter, isLearned from word_list where bookId = ? group by chapter", [NSNumber numberWithInteger:lexicionID]];
     NSMutableArray *arr = [[NSMutableArray alloc]init];
     while ([rs next]) {
         Chapter *chapter = [[Chapter alloc]init];
         chapter.wordCount = [rs intForColumn:@"word_count"];
         chapter.chapterId = [rs intForColumn:@"chapter"];
+        chapter.isLearned = [rs intForColumn:@"isLearned"];
         [arr addObject:chapter];
     }
     [_fmdb close];
@@ -282,6 +283,125 @@
 
 
 /**
+ *  获取今天记忆词汇量
+ *
+ *  @return 今天词汇记忆量
+ */
+- (NSInteger)getMyTodayWordsMemWordsCount
+{
+    NSInteger todayMemWordsCount = 0;
+    NSDate *todayZeroDate = [self zeroOfDate];
+    //NSLog(@"%@", todayZeroDate);
+    NSTimeInterval timeStamp = [todayZeroDate timeIntervalSince1970];
+    //NSLog(@"%ld",(long) timeStamp);
+    
+    [_fmdb open];
+    
+    //FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as todayCount from word_list where createTime > ?", [NSNumber numberWithLong:(long)timeStamp]];
+    FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as todayCount, rem_param from word_list where createTime > ? group by rem_param", [NSNumber numberWithLong:(long)timeStamp]];
+    
+    while ([rs next]) {
+        double rem_param = [rs doubleForColumn:@"rem_param"];
+        todayMemWordsCount += (NSInteger)([rs intForColumn:@"todayCount"] * rem_param);
+    }
+    
+    [_fmdb close];
+    return todayMemWordsCount;
+}
+
+- (NSMutableArray *)getChapterInfoReviewed
+{
+    [_fmdb open];
+    FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as word_count, chapter, bookId, rem_param from word_list where isLearned = ? group by chapter order by rem_param asc", [NSNumber numberWithInteger:1]];
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    while ([rs next]) {
+        Chapter *chapter = [[Chapter alloc]init];
+        chapter.wordCount = [rs intForColumn:@"word_count"];
+        chapter.chapterId = [rs intForColumn:@"chapter"];
+        chapter.rem_param = [rs doubleForColumn:@"rem_param"];
+        chapter.bookId = [rs intForColumn:@"bookId"];
+        [arr addObject:chapter];
+    }
+    [_fmdb close];
+    return arr;
+}
+
+
+/**
+ *  根据BookId来获取词库名
+ *
+ *  @param bookId bookid
+ *
+ *  @return 词库名字符串
+ */
+- (NSString *)getBookNameByBookId:(NSInteger)bookId
+{
+    NSString *bookName = nil;
+    if (bookId) {
+        [_fmdb open];
+        FMResultSet *rs = [_fmdb executeQuery:@"select * from lexicon where ID = ?", [NSNumber numberWithInteger:bookId]];
+        while ([rs next]) {
+            bookName = [rs stringForColumn:@"Lexicon"];
+        }
+        [_fmdb close];
+    }
+    return bookName;
+}
+
+
+
+/**
+ *  根据时间(分钟)来计算艾宾浩斯记忆率
+ *
+ *  @param minute 时间(分钟)
+ *
+ *  @return 记忆率
+ */
++ (double)getEbbinghausRemParamWithMinutes:(double)minute
+{
+    double rem_param = 1.0;
+
+    if (minute >= 1) {
+        double k = 4.8;
+        double c = 1.2;
+        rem_param = k / (pow(log(minute), c) + k);
+    }
+
+    return rem_param;
+}
+
+/**
+ *  更新艾宾浩斯记忆率
+ */
+- (void)updateEbbinghausRemParam
+{
+    [_fmdb open];
+    FMResultSet *rs = [_fmdb executeQuery:@"select * from word_list where isLearned = 1 group by chapter"];
+    while ([rs next]) {
+        NSTimeInterval passedTimeStamp = [rs doubleForColumn:@"createTime"];
+        NSTimeInterval nowTimeStamp = [self getTimeStampNow];
+        NSTimeInterval minutes = (nowTimeStamp - passedTimeStamp) / 60;
+        NSLog(@"time : %f", minutes);
+        //读取更新前的记忆率
+        //double oldRemParam = [rs doubleForColumn:@"rem_param"];
+        
+        
+        //NSLog(@"过去了多少分钟 -- %.0f", minutes);
+        double remParam = [DB getEbbinghausRemParamWithMinutes:minutes];
+        
+//#warning -计算上还是存在问题-
+        //NSLog(@"艾宾浩斯记忆率%.2f * %.2f = %.2f", oldRemParam, remParam, newRemParam);
+        NSInteger chapterId = [rs intForColumn:@"chapter"];
+
+        [_fmdb executeUpdate:@"UPDATE word_list set rem_param = ? where chapter = ?", [NSNumber numberWithDouble:remParam], [NSNumber numberWithInteger: chapterId]];
+
+    }
+    [_fmdb close];
+}
+
+#pragma mark -时间戳相关-
+
+/**
  *  获取以当前系统时间为准的时间戳
  *
  *  @return 时间戳
@@ -295,9 +415,9 @@
     NSInteger interval = [timeZone secondsFromGMTForDate:date];
     
     NSDate *localDate = [date dateByAddingTimeInterval:interval];
-    
+
     NSTimeInterval timeStamp = [localDate timeIntervalSince1970];
-    
+
     return timeStamp;
 }
 
@@ -310,7 +430,9 @@
 - (NSDate *)zeroOfDate
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
+    
     NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+    
     components.hour = 0;
     components.minute = 0;
     components.second = 0;
@@ -330,29 +452,89 @@
 }
 
 /**
- *  获取今天记忆词汇量
+ *  输入一个时间戳, 返回一个字符串的 月-日 的日期格式
  *
- *  @return 今天词汇记忆量
+ *  @param timeStamp 时间戳
+ *
+ *  @return 月-日 的日期格式
  */
-- (NSInteger)getMyTodayWordsMemWordsCount
++ (NSString *)monthDayFormatWithTimeStamp:(NSTimeInterval)timeStamp
 {
-    NSInteger todayMemWordsCount = 0;
-    NSDate *todayZeroDate = [self zeroOfDate];
-    //NSLog(@"%@", todayZeroDate);
-    NSTimeInterval timeStamp = [todayZeroDate timeIntervalSince1970];
-    //NSLog(@"%ld",(long) timeStamp);
+    NSDateFormatter *formater = [[NSDateFormatter alloc]init];
+    [formater setDateFormat:@"MM-dd"];
+    return [formater stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeStamp]];
+}
+
+/**
+ *  输入一个nsdate对象, 返回一个字符串的 月-日 的日期格式
+ *
+ *  @param nsdate 对象
+ *
+ *  @return 月-日 的日期格式
+ */
++ (NSString *)monthDayFormatWithDate:(NSDate *)date
+{
+    NSString *todayDateString = [DB monthDayFormatWithTimeStamp: [date timeIntervalSince1970]];
+    return todayDateString;
+}
+
+/**
+ *  获取当天00点时刻的日期对象, 时区是当前系统时区
+ *
+ *  @return 00点时刻的日起对象
+ */
++ (NSDate *)zeroOfDate
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     
-    [_fmdb open];
+    NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:[NSDate dateWithTimeIntervalSinceNow:0]];
     
-    //FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as todayCount from word_list where createTime > ?", [NSNumber numberWithLong:(long)timeStamp]];
-    FMResultSet *rs = [_fmdb executeQuery:@"select count(*)as todayCount, rem_param from word_list where createTime > ? group by rem_param", [NSNumber numberWithLong:(long)timeStamp]];
-    while ([rs next]) {
-        double rem_param = [rs doubleForColumn:@"rem_param"];
-        todayMemWordsCount += (NSInteger)([rs intForColumn:@"todayCount"] * rem_param);
+    components.hour = 0;
+    components.minute = 0;
+    components.second = 0;
+    
+    // components.nanosecond = 0 not available in iOS
+    NSTimeInterval ts = (double)(int)[[calendar dateFromComponents:components] timeIntervalSince1970];
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:ts];
+    
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger interval = [timeZone secondsFromGMTForDate:date];
+    
+    NSDate *localDate = [date dateByAddingTimeInterval:interval];
+    
+    return localDate;
+}
+
+
+/**
+ *  根据一个时间段返回期间复习过的单词数
+ *
+ *  @param startTime 起始时间戳
+ *  @param endTime   结束时间戳
+ *
+ *  @return 复习过的单词数
+ */
+- (NSInteger)getWordCountWithStartTimeStamp:(NSTimeInterval)startTime EndTime:(NSTimeInterval)endTime
+{
+    //select count(*) as wordCount from word_list where createTime > 1436911210 and createTime < 1436911219
+    NSInteger count = 0;
+    if (startTime >= 0 && endTime >= 0) {
+        if (startTime > endTime) {
+            NSTimeInterval temp = startTime;
+            startTime = endTime;
+            endTime = temp;
+        }
+        
+        [_fmdb open];
+        FMResultSet *rs = [_fmdb executeQuery:@"select count(*) as wordCount from word_list where createTime > ? and createTime < ?", [NSNumber numberWithDouble:startTime], [NSNumber numberWithDouble:endTime]];
+        while ([rs next]) {
+            count = [rs intForColumn:@"wordCount"];
+        }
+        [_fmdb close];
     }
-    
-    [_fmdb close];
-    return todayMemWordsCount;
+    return count;
 }
 
 

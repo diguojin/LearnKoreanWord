@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReviewViewController : UIViewController
+@interface ReviewViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray *chaptersReviewedMArray;
+
+@property (nonatomic, strong) DB *mydb;
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end

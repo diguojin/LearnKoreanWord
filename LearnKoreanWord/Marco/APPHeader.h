@@ -16,7 +16,7 @@
 #define kChapterViewCell @"ChapterViewCell"
 #define kChapterWordListViewCell @"WordListViewCell"
 #define kMyPageTavleViewCell @"MyPageTableViewCell"
-
+#define kReviewViewCell @"ReviewViewCell"
 
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
@@ -32,5 +32,8 @@
 
 #define kWordListCellHeight 80.0
 #define kWordListHeaderHeight 140.0
+
+
+#define k1DaySeconds 86400
 
 #endif

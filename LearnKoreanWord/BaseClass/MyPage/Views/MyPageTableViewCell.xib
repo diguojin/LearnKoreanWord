@@ -20,7 +20,7 @@
                             <constraint firstAttribute="width" constant="282" id="fkf-wd-ZWq"/>
                             <constraint firstAttribute="height" constant="67.5" id="r7x-Z8-eLe"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,11 +39,11 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="q4m-u9-Nvd" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-17" id="Ui8-fg-J7N"/>
+                    <constraint firstAttribute="centerY" secondItem="q4m-u9-Nvd" secondAttribute="centerY" constant="-6" id="60f-NR-kac"/>
+                    <constraint firstAttribute="centerX" secondItem="q4m-u9-Nvd" secondAttribute="centerX" constant="11" id="aHk-LG-NDh"/>
                     <constraint firstItem="C5m-EH-gWZ" firstAttribute="leading" secondItem="xbT-99-WAR" secondAttribute="trailing" constant="8" id="cNb-AZ-zG9"/>
                     <constraint firstItem="C5m-EH-gWZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="fvI-mK-3pP"/>
                     <constraint firstItem="xbT-99-WAR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="lGz-lE-YBX"/>
-                    <constraint firstItem="q4m-u9-Nvd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="zUj-PA-2g1"/>
                     <constraint firstItem="xbT-99-WAR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="zvG-gL-YTV"/>
                 </constraints>
             </tableViewCellContentView>

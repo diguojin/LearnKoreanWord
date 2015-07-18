@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ChapterViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *imgView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *worldCountLabel;
+@property (strong, nonatomic) IBOutlet UILabel *LeftLabel;
+@property (strong, nonatomic) IBOutlet UILabel *isLearnedLabel;
 
 @end

@@ -54,16 +54,17 @@
     
     UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushToStartMemory)];
     [leftBtn addGestureRecognizer:leftTap];
+    leftBtn.frame = CGRectMake(leftBtn.frame.origin.x, leftBtn.frame.origin.y, SCREEN_WIDTH, leftBtn.frame.size.height);
     
     
-    BigButtonView *rightBtn = [[BigButtonView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 109, 0, 60)];
-    [self.view addSubview:rightBtn];
-    rightBtn.text = @"开始复习";
-    rightBtn.userInteractionEnabled = YES;
-    rightBtn.backgroundColor = COLOR_2;
-    
-    UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushToStartReview)];
-    [rightBtn addGestureRecognizer:rightTap];
+//    BigButtonView *rightBtn = [[BigButtonView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 109, 0, 60)];
+//    [self.view addSubview:rightBtn];
+//    rightBtn.text = @"开始复习";
+//    rightBtn.userInteractionEnabled = YES;
+//    rightBtn.backgroundColor = COLOR_2;
+//    
+//    UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushToStartReview)];
+//    [rightBtn addGestureRecognizer:rightTap];
     
     
     

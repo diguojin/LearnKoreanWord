@@ -31,6 +31,12 @@
 		884614A11B43F82E00FE3261 /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614A01B43F82E00FE3261 /* Chapter.m */; };
 		884614A51B43FD3400FE3261 /* ChapterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 884614A31B43FD3400FE3261 /* ChapterViewCell.m */; };
 		884614A61B43FD3400FE3261 /* ChapterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884614A41B43FD3400FE3261 /* ChapterViewCell.xib */; };
+		885FA8FD1B58F97900190CCD /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8F21B58F97900190CCD /* UUBar.m */; };
+		885FA8FE1B58F97900190CCD /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8F41B58F97900190CCD /* UUBarChart.m */; };
+		885FA8FF1B58F97900190CCD /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8F61B58F97900190CCD /* UUChart.m */; };
+		885FA9001B58F97900190CCD /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8F81B58F97900190CCD /* UUChartLabel.m */; };
+		885FA9011B58F97900190CCD /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8FA1B58F97900190CCD /* UUColor.m */; };
+		885FA9021B58F97900190CCD /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8FC1B58F97900190CCD /* UULineChart.m */; };
 		88A8F6841B452AAD00277EEC /* WordListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6821B452AAD00277EEC /* WordListViewCell.m */; };
 		88A8F6851B452AAD00277EEC /* WordListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A8F6831B452AAD00277EEC /* WordListViewCell.xib */; };
 		88A8F68B1B4634A200277EEC /* BigButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F68A1B4634A200277EEC /* BigButtonView.m */; };
@@ -52,6 +58,12 @@
 		88FA4BB31B53684B00321771 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */; };
 		88FA4BB61B53EFA100321771 /* UILabel+FlickerNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BB51B53EFA100321771 /* UILabel+FlickerNumber.m */; };
 		88FA4BB71B53EFA100321771 /* UILabel+FlickerNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BB51B53EFA100321771 /* UILabel+FlickerNumber.m */; };
+		88FA4BBA1B56073E00321771 /* IndexOfKorean.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BB91B56073E00321771 /* IndexOfKorean.m */; };
+		88FA4BBB1B56073E00321771 /* IndexOfKorean.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BB91B56073E00321771 /* IndexOfKorean.m */; };
+		88FA4BBF1B56418700321771 /* ReviewViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BBD1B56418700321771 /* ReviewViewCell.m */; };
+		88FA4BC01B56418700321771 /* ReviewViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BBD1B56418700321771 /* ReviewViewCell.m */; };
+		88FA4BC11B56418700321771 /* ReviewViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BBE1B56418700321771 /* ReviewViewCell.xib */; };
+		88FA4BC21B56418700321771 /* ReviewViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BBE1B56418700321771 /* ReviewViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +127,18 @@
 		884614A21B43FD3400FE3261 /* ChapterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewCell.h; sourceTree = "<group>"; };
 		884614A31B43FD3400FE3261 /* ChapterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewCell.m; sourceTree = "<group>"; };
 		884614A41B43FD3400FE3261 /* ChapterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterViewCell.xib; sourceTree = "<group>"; };
+		885FA8F11B58F97900190CCD /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
+		885FA8F21B58F97900190CCD /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
+		885FA8F31B58F97900190CCD /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
+		885FA8F41B58F97900190CCD /* UUBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBarChart.m; sourceTree = "<group>"; };
+		885FA8F51B58F97900190CCD /* UUChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChart.h; sourceTree = "<group>"; };
+		885FA8F61B58F97900190CCD /* UUChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChart.m; sourceTree = "<group>"; };
+		885FA8F71B58F97900190CCD /* UUChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartLabel.h; sourceTree = "<group>"; };
+		885FA8F81B58F97900190CCD /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
+		885FA8F91B58F97900190CCD /* UUColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUColor.h; sourceTree = "<group>"; };
+		885FA8FA1B58F97900190CCD /* UUColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUColor.m; sourceTree = "<group>"; };
+		885FA8FB1B58F97900190CCD /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
+		885FA8FC1B58F97900190CCD /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 		88A8F6811B452AAD00277EEC /* WordListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListViewCell.h; sourceTree = "<group>"; };
 		88A8F6821B452AAD00277EEC /* WordListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListViewCell.m; sourceTree = "<group>"; };
 		88A8F6831B452AAD00277EEC /* WordListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordListViewCell.xib; sourceTree = "<group>"; };
@@ -142,6 +166,11 @@
 		88FA4BAF1B53684B00321771 /* MyPageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPageTableViewCell.xib; sourceTree = "<group>"; };
 		88FA4BB41B53EFA100321771 /* UILabel+FlickerNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FlickerNumber.h"; sourceTree = "<group>"; };
 		88FA4BB51B53EFA100321771 /* UILabel+FlickerNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FlickerNumber.m"; sourceTree = "<group>"; };
+		88FA4BB81B56073E00321771 /* IndexOfKorean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexOfKorean.h; sourceTree = "<group>"; };
+		88FA4BB91B56073E00321771 /* IndexOfKorean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexOfKorean.m; sourceTree = "<group>"; };
+		88FA4BBC1B56418700321771 /* ReviewViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewCell.h; sourceTree = "<group>"; };
+		88FA4BBD1B56418700321771 /* ReviewViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewCell.m; sourceTree = "<group>"; };
+		88FA4BBE1B56418700321771 /* ReviewViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +321,7 @@
 		8846144F1B3E40E000FE3261 /* TheThird */ = {
 			isa = PBXGroup;
 			children = (
+				885FA8F01B58F97900190CCD /* UUChart */,
 				88FA4BA41B5010E700321771 /* MBProgressHUD */,
 				884614721B42330400FE3261 /* fmdb */,
 			);
@@ -411,6 +441,8 @@
 				8805BD881B44E8E700BDC343 /* Word.m */,
 				88A8F69B1B46AA6200277EEC /* WordList.h */,
 				88A8F69C1B46AA6200277EEC /* WordList.m */,
+				88FA4BB81B56073E00321771 /* IndexOfKorean.h */,
+				88FA4BB91B56073E00321771 /* IndexOfKorean.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +455,9 @@
 				88A8F6831B452AAD00277EEC /* WordListViewCell.xib */,
 				88A8F6981B46866800277EEC /* ChooseWordView.h */,
 				88A8F6991B46866800277EEC /* ChooseWordView.m */,
+				88FA4BBC1B56418700321771 /* ReviewViewCell.h */,
+				88FA4BBD1B56418700321771 /* ReviewViewCell.m */,
+				88FA4BBE1B56418700321771 /* ReviewViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -443,6 +478,25 @@
 				8846147D1B42330400FE3261 /* FMResultSet.m */,
 			);
 			path = fmdb;
+			sourceTree = "<group>";
+		};
+		885FA8F01B58F97900190CCD /* UUChart */ = {
+			isa = PBXGroup;
+			children = (
+				885FA8F11B58F97900190CCD /* UUBar.h */,
+				885FA8F21B58F97900190CCD /* UUBar.m */,
+				885FA8F31B58F97900190CCD /* UUBarChart.h */,
+				885FA8F41B58F97900190CCD /* UUBarChart.m */,
+				885FA8F51B58F97900190CCD /* UUChart.h */,
+				885FA8F61B58F97900190CCD /* UUChart.m */,
+				885FA8F71B58F97900190CCD /* UUChartLabel.h */,
+				885FA8F81B58F97900190CCD /* UUChartLabel.m */,
+				885FA8F91B58F97900190CCD /* UUColor.h */,
+				885FA8FA1B58F97900190CCD /* UUColor.m */,
+				885FA8FB1B58F97900190CCD /* UULineChart.h */,
+				885FA8FC1B58F97900190CCD /* UULineChart.m */,
+			);
+			path = UUChart;
 			sourceTree = "<group>";
 		};
 		88FA4BA41B5010E700321771 /* MBProgressHUD */ = {
@@ -534,6 +588,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FA4BC11B56418700321771 /* ReviewViewCell.xib in Resources */,
 				88A8F6851B452AAD00277EEC /* WordListViewCell.xib in Resources */,
 				8846149B1B42855300FE3261 /* LexiconViewCell.xib in Resources */,
 				884614341B3E3FF400FE3261 /* LaunchScreen.xib in Resources */,
@@ -549,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FA4BB31B53684B00321771 /* MyPageTableViewCell.xib in Resources */,
+				88FA4BC21B56418700321771 /* ReviewViewCell.xib in Resources */,
 				88FA4BA31B500F9B00321771 /* LKTDB.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,7 +624,9 @@
 				88A8F6841B452AAD00277EEC /* WordListViewCell.m in Sources */,
 				88A8F69D1B46AA6200277EEC /* WordList.m in Sources */,
 				8846149E1B43F4CA00FE3261 /* ChapterViewController.m in Sources */,
+				885FA9011B58F97900190CCD /* UUColor.m in Sources */,
 				88A8F6A61B4A755100277EEC /* CRGradientLabel.m in Sources */,
+				885FA8FD1B58F97900190CCD /* UUBar.m in Sources */,
 				8846149A1B42855300FE3261 /* LexiconViewCell.m in Sources */,
 				884614801B42330400FE3261 /* FMDatabasePool.m in Sources */,
 				88A8F69A1B46866800277EEC /* ChooseWordView.m in Sources */,
@@ -580,14 +638,20 @@
 				8846142C1B3E3FF400FE3261 /* main.m in Sources */,
 				884614641B40447000FE3261 /* MyPageViewController.m in Sources */,
 				884614821B42330400FE3261 /* FMResultSet.m in Sources */,
+				885FA9001B58F97900190CCD /* UUChartLabel.m in Sources */,
 				8846146A1B40F3C600FE3261 /* DB.m in Sources */,
+				885FA8FE1B58F97900190CCD /* UUBarChart.m in Sources */,
 				88A8F6A31B4A6AE900277EEC /* UIView+Shadow.m in Sources */,
+				885FA9021B58F97900190CCD /* UULineChart.m in Sources */,
 				88A8F68B1B4634A200277EEC /* BigButtonView.m in Sources */,
 				88A8F6971B467F5000277EEC /* SpellingWordViewController.m in Sources */,
+				885FA8FF1B58F97900190CCD /* UUChart.m in Sources */,
+				88FA4BBF1B56418700321771 /* ReviewViewCell.m in Sources */,
 				88FA4BB01B53684B00321771 /* MyPageTableViewCell.m in Sources */,
 				884614A11B43F82E00FE3261 /* Chapter.m in Sources */,
 				884614A51B43FD3400FE3261 /* ChapterViewCell.m in Sources */,
 				8846147F1B42330400FE3261 /* FMDatabaseAdditions.m in Sources */,
+				88FA4BBA1B56073E00321771 /* IndexOfKorean.m in Sources */,
 				8805BD891B44E8E700BDC343 /* Word.m in Sources */,
 				88A8F6941B467EB800277EEC /* ChooseWordViewController.m in Sources */,
 			);
@@ -602,6 +666,8 @@
 				88FA4BB11B53684B00321771 /* MyPageTableViewCell.m in Sources */,
 				88FA4BAC1B50139500321771 /* UIViewController+MBProgressHUD.m in Sources */,
 				88FA4BB71B53EFA100321771 /* UILabel+FlickerNumber.m in Sources */,
+				88FA4BC01B56418700321771 /* ReviewViewCell.m in Sources */,
+				88FA4BBB1B56073E00321771 /* IndexOfKorean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,8 +716,11 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/diguojin/Development/LearnKoreanWord/LearnKoreanWord/Marco/PrefixHeader.h;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -693,7 +762,10 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/diguojin/Development/LearnKoreanWord/LearnKoreanWord/Marco/PrefixHeader.h;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

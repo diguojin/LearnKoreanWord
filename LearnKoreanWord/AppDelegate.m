@@ -13,7 +13,7 @@
 #import "ReviewViewController.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong)DB *mydb;
 @end
 
 @implementation AppDelegate
@@ -27,7 +27,6 @@
     MyPageViewController *myPageVC2 = [[MyPageViewController alloc]init];
     ReviewViewController *reviewVC3 = [[ReviewViewController alloc]init];
     
-    
     UINavigationController *naVC1 = [[UINavigationController alloc]initWithRootViewController:lexiconVC1];
     UINavigationController *naVC2 = [[UINavigationController alloc]initWithRootViewController:myPageVC2];
     UINavigationController *naVC3 = [[UINavigationController alloc]initWithRootViewController:reviewVC3];
@@ -35,11 +34,20 @@
     UITabBarController *TBC = [[UITabBarController alloc]init];
     TBC.viewControllers = @[naVC1 ,naVC2 ,naVC3];
     
-    naVC1.title = @"词库";
-    naVC2.title = @"统计";
-    naVC3.title = @"复习";
+    naVC1.tabBarItem = [[UITabBarItem alloc]initWithTitle: @"词库" image:[UIImage imageNamed:@"iconfont-book"] selectedImage:[UIImage imageNamed:@"iconfont-book"]];
+    
+    //TBC.tabBar.barTintColor = [UIColor colorWithRed:147/255.0 green:224/255.0 blue:225/255.0 alpha:1];
+
+    naVC2.tabBarItem = [[UITabBarItem alloc]initWithTitle: @"统计" image:[UIImage imageNamed:@"iconfont-tongji"] selectedImage:[UIImage imageNamed:@"iconfont-tongji"]];
+    
+    naVC3.tabBarItem = [[UITabBarItem alloc]initWithTitle: @"复习" image:[UIImage imageNamed:@"iconfont-fuxi"] selectedImage:[UIImage imageNamed:@"iconfont-fuxi"]];
     
     self.window.rootViewController = TBC;
+    [DB setDBfileFromResourceFileName:kResourceDBFile targetName:kTargetDBFile];
+
+    _mydb = [DB sharedDBWithName:kTargetDBFile];
+    
+    //[_mydb updateEbbinghausRemParam];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -61,6 +69,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //[_mydb updateEbbinghausRemParam];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -9,8 +9,11 @@
 #import "ChapterViewController.h"
 #import "ChapterViewCell.h"
 #import "ChapterWordListViewController.h"
+#import "IndexOfKorean.h"
 
 @interface ChapterViewController ()
+
+@property (strong, nonatomic) IndexOfKorean *indexOfKr;
 
 @end
 
@@ -19,6 +22,7 @@
     self = [super init];
     if (self) {
         _chapterName = [[NSString alloc]init];
+        _indexOfKr = [[IndexOfKorean alloc]init];
     }
     return self;
 }
@@ -56,7 +60,13 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.worldCountLabel.text = [NSString stringWithFormat:@"%ld", (long)[_chaptersMArray[indexPath.row] wordCount]];
-    cell.imgView.image = [UIImage imageNamed:@"chapter_img"];
+    //cell.imgView.image = [UIImage imageNamed:@"chapter_img"];
+    cell.LeftLabel.text = [_indexOfKr KoreanIndexAtIndex:indexPath.row];
+    if ([_chaptersMArray[indexPath.row] isLearned] == 1) {
+        cell.isLearnedLabel.hidden = NO;
+    }else{
+        cell.isLearnedLabel.hidden = YES;
+    }
     cell.titleLabel.text = [NSString stringWithFormat:@"%@ %ld", _chapterName, (long)indexPath.row + 1];
     return cell;
 }

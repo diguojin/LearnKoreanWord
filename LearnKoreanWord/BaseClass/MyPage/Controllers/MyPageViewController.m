@@ -24,7 +24,6 @@
     _mydb = [DB sharedDBWithName:kTargetDBFile];
     _totalMemWordsCount = [_mydb getMyWordsMemWordsCount];
     
-    
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -57,7 +56,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -90,15 +89,23 @@
             cell.NumberLabel.textColor = [UIColor orangeColor];
             break;
         }
+        case 2:{
+            [cell setupChartView];
+            cell.titleLabel.text = @"七日间复习统计";
+            cell.iconImgView.image = [UIImage imageNamed:@"total"];
+            cell.NumberLabel.hidden = YES;
+            break;
+        }
         default:
             break;
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 130;
+    return 160;
 }
 
 @end

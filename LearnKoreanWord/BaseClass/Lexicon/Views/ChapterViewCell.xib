@@ -14,14 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qz-xa-ufq">
-                        <rect key="frame" x="8" y="8" width="84" height="84"/>
-                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="84" id="PAh-Ta-mZS"/>
-                            <constraint firstAttribute="width" constant="84" id="ltT-kF-XD8"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单词数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7Q-EF-6ai">
                         <rect key="frame" x="257" y="13" width="51" height="21"/>
                         <constraints>
@@ -52,20 +44,45 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tek-Rn-JZX">
+                        <rect key="frame" x="8" y="8" width="84" height="83.5"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="84" id="Q4s-Ei-ECe"/>
+                            <constraint firstAttribute="height" constant="83.5" id="TJF-yQ-mrP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 已复习" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5a-wy-2IG">
+                        <rect key="frame" x="100" y="57" width="93" height="34"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="Cxg-WM-92b"/>
+                            <constraint firstAttribute="width" constant="93" id="tjA-xn-ORO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="L7Q-EF-6ai" firstAttribute="centerX" secondItem="A6b-hm-oSZ" secondAttribute="centerX" id="4nZ-os-4t4"/>
                     <constraint firstItem="A6b-hm-oSZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="BU4-UF-rfW"/>
+                    <constraint firstItem="b5a-wy-2IG" firstAttribute="leading" secondItem="tek-Rn-JZX" secondAttribute="trailing" constant="8" id="GZt-hF-vaI"/>
                     <constraint firstItem="STh-Jw-xc0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="InC-NY-2jT"/>
-                    <constraint firstItem="7qz-xa-ufq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Wvq-Qv-WYb"/>
-                    <constraint firstItem="7qz-xa-ufq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="eSX-P6-Sbc"/>
-                    <constraint firstItem="STh-Jw-xc0" firstAttribute="leading" secondItem="7qz-xa-ufq" secondAttribute="trailing" constant="8" id="f1g-QI-Mss"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="b5a-wy-2IG" secondAttribute="bottom" constant="0.5" id="O8u-PW-dIj"/>
+                    <constraint firstItem="tek-Rn-JZX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SdS-YE-KwM"/>
+                    <constraint firstItem="tek-Rn-JZX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gcg-v3-8XE"/>
                     <constraint firstItem="A6b-hm-oSZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="lhb-ie-FWR"/>
+                    <constraint firstItem="STh-Jw-xc0" firstAttribute="leading" secondItem="tek-Rn-JZX" secondAttribute="trailing" constant="8" id="siY-i5-RFA"/>
                     <constraint firstItem="A6b-hm-oSZ" firstAttribute="top" secondItem="L7Q-EF-6ai" secondAttribute="bottom" constant="-6" id="yCU-s4-sLR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imgView" destination="7qz-xa-ufq" id="9Df-Cl-9VT"/>
+                <outlet property="LeftLabel" destination="tek-Rn-JZX" id="25Z-th-zkh"/>
+                <outlet property="isLearnedLabel" destination="b5a-wy-2IG" id="BpG-g5-8Xs"/>
                 <outlet property="titleLabel" destination="STh-Jw-xc0" id="cfR-hz-PQz"/>
                 <outlet property="worldCountLabel" destination="A6b-hm-oSZ" id="4dZ-1f-5e8"/>
             </connections>
