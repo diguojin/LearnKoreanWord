@@ -122,6 +122,7 @@
         Word *word = [[Word alloc]init];
         word.zh = [rs stringForColumn:@"zh"];
         word.kr = [rs stringForColumn:@"kr"];
+        word.wordId = [rs intForColumn:@"wid"];
         word.chapter = chapterID;
         [arr addObject:word];
     }
@@ -263,6 +264,52 @@
     [_fmdb close];
     return memParam;
 }
+
+/**
+ *  增加单词错误次数1次
+ *
+ *  @param word 错误的单词
+ */
+- (void)addWordWrongTimesUpWithWord:(Word *)word
+{
+    [_fmdb open];
+    if (word && word.wordId) {
+        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes + 1 WHERE wid = ?", [NSNumber numberWithDouble:word.wordId]];
+    }
+    [_fmdb close];
+}
+
+/**
+ *  减少单词错误次数1次
+ *
+ *  @param word 错误的单词
+ */
+- (void)reduceWordWrongTimesUpWithWord:(Word *)word
+{
+    [_fmdb open];
+    if (word && word.wordId) {
+        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes - 1 WHERE wid = ?", [NSNumber numberWithDouble:word.wordId]];
+    }
+    [_fmdb close];
+}
+
+
+/**
+ *  制定某单词的错误次数
+ *
+ *  @param word  单词
+ *  @param count 错误次数
+ */
+- (void)setWordWrongTimesUpWithWord:(Word *)word Count:(NSInteger)count
+{
+    [_fmdb open];
+    if (word && word.wordId) {
+        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = ? WHERE wid = ?", [NSNumber numberWithInteger:count], [NSNumber numberWithDouble:word.wordId]];
+        NSLog(@"set 0 word :%@",word.kr);
+    }
+    [_fmdb close];
+}
+
 
 /**
  *  获取记忆词汇量
@@ -535,6 +582,29 @@
         [_fmdb close];
     }
     return count;
+}
+
+/**
+ *  获取全部错误过的单词
+ *
+ *  @return 错误单词数组
+ */
+- (NSMutableArray *)getAllWrongWords
+{
+    NSMutableArray *arr = [NSMutableArray new];
+    [_fmdb open];
+    FMResultSet *rs = [_fmdb executeQuery:@"select * from word_list where wrongTimes > 0 order by wrongTimes desc"];
+    while ([rs next]) {
+        Word *word = [Word new];
+        word.wordId = [rs intForColumn:@"wid"];
+        word.kr = [rs stringForColumn:@"kr"];
+        word.zh = [rs stringForColumn:@"zh"];
+        word.worngTimes = [rs intForColumn:@"wrongTimes"];
+        
+        [arr addObject:word];
+    }
+    [_fmdb close];
+    return arr;
 }
 
 

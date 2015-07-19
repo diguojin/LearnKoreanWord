@@ -18,6 +18,6 @@
 /**
  *  设置图标视图
  */
-- (void)setupChartView;
+- (void)setupChartViewWithIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Word : NSObject
+
 @property (nonatomic, strong) NSString *zh;
 @property (nonatomic, strong) NSString *kr;
+
 @property (nonatomic, assign) NSInteger wordId;
 @property (nonatomic, assign) NSInteger chapter;
+@property (nonatomic, assign) NSInteger worngTimes;
 @end

@@ -12,12 +12,13 @@
 @interface MyPageTableViewCell () <UUChartDataSource>
 {
     UUChart *_chartView;
+    NSIndexPath *_path;
 }
 @end
 
 @implementation MyPageTableViewCell
 
-- (void)setupChartView
+- (void)setupChartViewWithIndexPath:(NSIndexPath *)indexPath
 {
     if (_chartView) {
         [_chartView removeFromSuperview];
@@ -27,6 +28,7 @@
     _chartView = [[UUChart alloc]initwithUUChartDataFrame:CGRectMake(10, 40, SCREEN_WIDTH - 20, 100)
                                                withSource:self
                                                 withStyle:UUChartLineStyle];
+    _path = indexPath;
     [_chartView showInView:self.contentView];
 }
 
@@ -98,5 +100,23 @@
     
     return @[arr];
 }
+
+//判断显示横线条
+- (BOOL)UUChart:(UUChart *)chart ShowHorizonLineAtIndex:(NSInteger)index
+{
+    return YES;
+}
+
+- (NSArray *)UUChart_ColorArray:(UUChart *)chart
+{
+    return @[[UIColor orangeColor]];
+}
+
+//判断显示最大最小值
+//- (BOOL)UUChart:(UUChart *)chart ShowMaxMinAtIndex:(NSInteger)index
+//{
+//    NSLog(@"-----%ld",index);
+//    return YES;
+//}
 
 @end

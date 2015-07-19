@@ -37,6 +37,7 @@
 		885FA9001B58F97900190CCD /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8F81B58F97900190CCD /* UUChartLabel.m */; };
 		885FA9011B58F97900190CCD /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8FA1B58F97900190CCD /* UUColor.m */; };
 		885FA9021B58F97900190CCD /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8FC1B58F97900190CCD /* UULineChart.m */; };
+		885FA9051B5B4CED00190CCD /* WrongWordsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA9041B5B4CED00190CCD /* WrongWordsListViewController.m */; };
 		88A8F6841B452AAD00277EEC /* WordListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6821B452AAD00277EEC /* WordListViewCell.m */; };
 		88A8F6851B452AAD00277EEC /* WordListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A8F6831B452AAD00277EEC /* WordListViewCell.xib */; };
 		88A8F68B1B4634A200277EEC /* BigButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F68A1B4634A200277EEC /* BigButtonView.m */; };
@@ -139,6 +140,8 @@
 		885FA8FA1B58F97900190CCD /* UUColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUColor.m; sourceTree = "<group>"; };
 		885FA8FB1B58F97900190CCD /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
 		885FA8FC1B58F97900190CCD /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
+		885FA9031B5B4CED00190CCD /* WrongWordsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrongWordsListViewController.h; sourceTree = "<group>"; };
+		885FA9041B5B4CED00190CCD /* WrongWordsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrongWordsListViewController.m; sourceTree = "<group>"; };
 		88A8F6811B452AAD00277EEC /* WordListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListViewCell.h; sourceTree = "<group>"; };
 		88A8F6821B452AAD00277EEC /* WordListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListViewCell.m; sourceTree = "<group>"; };
 		88A8F6831B452AAD00277EEC /* WordListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordListViewCell.xib; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 			children = (
 				884614621B40447000FE3261 /* MyPageViewController.h */,
 				884614631B40447000FE3261 /* MyPageViewController.m */,
+				885FA9031B5B4CED00190CCD /* WrongWordsListViewController.h */,
+				885FA9041B5B4CED00190CCD /* WrongWordsListViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 				884614A11B43F82E00FE3261 /* Chapter.m in Sources */,
 				884614A51B43FD3400FE3261 /* ChapterViewCell.m in Sources */,
 				8846147F1B42330400FE3261 /* FMDatabaseAdditions.m in Sources */,
+				885FA9051B5B4CED00190CCD /* WrongWordsListViewController.m in Sources */,
 				88FA4BBA1B56073E00321771 /* IndexOfKorean.m in Sources */,
 				8805BD891B44E8E700BDC343 /* Word.m in Sources */,
 				88A8F6941B467EB800277EEC /* ChooseWordViewController.m in Sources */,

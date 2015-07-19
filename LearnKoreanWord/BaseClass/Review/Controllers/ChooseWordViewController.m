@@ -98,13 +98,13 @@
 //判断答案是否正确
 - (void)checkAnswer:(NSString *)answer
 {
-    NSLog(@"我提交的答案是%@",answer);
+    //NSLog(@"我提交的答案是%@",answer);
     if ([answer isEqualToString:[[_wordList getWord] zh]]) {
-        NSLog(@"回答正确%@",answer);
+        //NSLog(@"回答正确%@",answer);
 
         NSInteger result = [_wordList nextWord];
         if (result == 2) {
-            NSLog(@"单元结束");
+            //NSLog(@"单元结束");
             [self finishChapter];
         }else{
             [self showAnswerHUDIsCorrect:YES];
@@ -112,7 +112,7 @@
         [self updateUI];
         
     }else{
-        NSLog(@"回答错误%@",answer);
+        //NSLog(@"回答错误%@",answer);
         [self showAnswerHUDIsCorrect:NO];
         [_wordList addWrongWord];
         [self hideWrongAnswer];
@@ -135,6 +135,7 @@
             [mydb setChapterLearnedWithChapter:chapterId];
         }
     }
+    
     double newMemParam = 0;
     if([_wordList count] != 0){
         
@@ -143,7 +144,7 @@
         
         //获取之前的记忆率
         double memParam = [mydb getMemoryParamWidthChapter:chapterId];
-        NSLog(@"当前单词记忆率: %f",memParam);
+        //NSLog(@"当前单词记忆率: %f", memParam);
         
         //根据之前的记忆率来修正即将更新的单词记忆量
         NSInteger wordsCountWillUpdate = wordsCountRemembered - [_wordList count] * memParam;
@@ -155,8 +156,14 @@
         newMemParam = wordsCountRemembered / (double)[_wordList count];
 
         [mydb setMemoryParamWidthChapter:chapterId MemParam: newMemParam];
-        NSLog(@"更新后的单词记忆率: %f", newMemParam);
-
+        //NSLog(@"更新后的单词记忆率: %f", newMemParam);
+        
+        //给错误单词 进行错误次数计数
+        if ([_wordList wrongCount] > 0) {
+            for (Word *wrongWord in _wordList.wrongWordsMArray) {
+                [mydb addWordWrongTimesUpWithWord:wrongWord];
+            }
+        }
     }
     
     [self showResult];

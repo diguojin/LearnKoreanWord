@@ -10,6 +10,7 @@
 #import "FMDB.h"
 #import "Lexicon.h"
 #import "Chapter.h"
+#import "Word.h"
 
 
 @interface DB : NSObject
@@ -180,5 +181,35 @@
  *  @return 复习过的单词数
  */
 - (NSInteger)getWordCountWithStartTimeStamp:(NSTimeInterval)startTime EndTime:(NSTimeInterval)endTime;
+
+
+/**
+ *  增加单词错误次数1次
+ *
+ *  @param word 错误的单词
+ */
+- (void)addWordWrongTimesUpWithWord:(Word *)word;
+
+/**
+ *  减少单词错误次数1次
+ *
+ *  @param word 错误的单词
+ */
+- (void)reduceWordWrongTimesUpWithWord:(Word *)word;
+
+/**
+ *  获取全部错误过的单词
+ *
+ *  @return 错误单词数组
+ */
+- (NSMutableArray *)getAllWrongWords;
+
+/**
+ *  制定某单词的错误次数
+ *
+ *  @param word  单词
+ *  @param count 错误次数
+ */
+- (void)setWordWrongTimesUpWithWord:(Word *)word Count:(NSInteger)count;
 
 @end

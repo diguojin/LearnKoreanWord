@@ -11,6 +11,7 @@
 #import "MyPageTableViewCell.h"
 #import "CRGradientLabel.h"
 #import "UILabel+FlickerNumber.h"
+#import "WrongWordsListViewController.h"
 
 @interface MyPageViewController ()
 
@@ -32,9 +33,18 @@
     [self.view addSubview:_tableView];
     
     _pullDownRefreshControl = [[UIRefreshControl alloc]init];
-    //_pullDownRefreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新数据"];
     [_pullDownRefreshControl addTarget:self action:@selector(doRefresh) forControlEvents:UIControlEventValueChanged];
     [_tableView addSubview:_pullDownRefreshControl];
+    
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"错词单" style:UIBarButtonItemStyleDone target:self action:@selector(pushToWrongWordsList)];
+    
+    self.navigationItem.rightBarButtonItem = btn;
+}
+
+- (void)pushToWrongWordsList
+{
+    WrongWordsListViewController *WWLVC = [WrongWordsListViewController new];
+    [self.navigationController pushViewController:WWLVC animated:YES];
 }
 
 - (void)doRefresh
@@ -90,7 +100,7 @@
             break;
         }
         case 2:{
-            [cell setupChartView];
+            [cell setupChartViewWithIndexPath:indexPath];
             cell.titleLabel.text = @"七日间复习统计";
             cell.iconImgView.image = [UIImage imageNamed:@"total"];
             cell.NumberLabel.hidden = YES;
