@@ -19,6 +19,7 @@
         self.textAlignment = NSTextAlignmentCenter;
         self.text = @"wojiukankan";
         self.userInteractionEnabled = YES;
+        self.numberOfLines = 0;
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
         [self addGestureRecognizer:tap];

@@ -15,5 +15,5 @@
 
 @property (nonatomic, assign) NSInteger wordId;
 @property (nonatomic, assign) NSInteger chapter;
-@property (nonatomic, assign) NSInteger worngTimes;
+@property (nonatomic, assign) NSInteger wrongTimes;
 @end

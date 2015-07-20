@@ -274,7 +274,9 @@
 {
     [_fmdb open];
     if (word && word.wordId) {
-        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes + 1 WHERE wid = ?", [NSNumber numberWithDouble:word.wordId]];
+        BOOL success = [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes + 1 WHERE wid = ?", [NSNumber numberWithInteger:word.wordId]];
+        NSLog(@"wordId:%ld chapter:%ld zh:%@ kr:%@", (long)word.wordId, (long)word.chapter, word.zh, word.kr);
+        NSLog(@"update %d",success);
     }
     [_fmdb close];
 }
@@ -288,7 +290,7 @@
 {
     [_fmdb open];
     if (word && word.wordId) {
-        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes - 1 WHERE wid = ?", [NSNumber numberWithDouble:word.wordId]];
+        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes - 1 WHERE wid = ?", [NSNumber numberWithInteger:word.wordId]];
     }
     [_fmdb close];
 }
@@ -304,7 +306,7 @@
 {
     [_fmdb open];
     if (word && word.wordId) {
-        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = ? WHERE wid = ?", [NSNumber numberWithInteger:count], [NSNumber numberWithDouble:word.wordId]];
+        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = ? WHERE wid = ?", [NSNumber numberWithInteger:count], [NSNumber numberWithInteger:word.wordId]];
         NSLog(@"set 0 word :%@",word.kr);
     }
     [_fmdb close];
@@ -591,16 +593,18 @@
  */
 - (NSMutableArray *)getAllWrongWords
 {
+    NSLog(@"-----wrong-----");
     NSMutableArray *arr = [NSMutableArray new];
     [_fmdb open];
     FMResultSet *rs = [_fmdb executeQuery:@"select * from word_list where wrongTimes > 0 order by wrongTimes desc"];
+
     while ([rs next]) {
         Word *word = [Word new];
         word.wordId = [rs intForColumn:@"wid"];
         word.kr = [rs stringForColumn:@"kr"];
         word.zh = [rs stringForColumn:@"zh"];
-        word.worngTimes = [rs intForColumn:@"wrongTimes"];
-        
+        word.wrongTimes = [rs intForColumn:@"wrongTimes"];
+        NSLog(@"-----wrong-----%ld", word.wrongTimes);
         [arr addObject:word];
     }
     [_fmdb close];

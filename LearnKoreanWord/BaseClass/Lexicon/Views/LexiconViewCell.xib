@@ -22,6 +22,21 @@
                     <view alpha="0.44999999999999962" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEF-ZT-uEj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="54.5" id="Vws-Wb-wpW">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40.5"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Vws-Wb-wpW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Vws-Wb-wpW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsN-up-68C">
                         <rect key="frame" x="330" y="36" width="42" height="21"/>
@@ -38,16 +53,16 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="SVh-iL-06V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="E5l-nH-rSt"/>
-                    <constraint firstItem="SVh-iL-06V" firstAttribute="height" secondItem="sEF-ZT-uEj" secondAttribute="height" id="RuP-Jn-zfa"/>
                     <constraint firstItem="Nmh-IN-LTs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="Sa6-Hv-Ysh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="PsN-up-68C" secondAttribute="trailing" constant="13" id="Vdq-vs-HkW"/>
                     <constraint firstItem="SVh-iL-06V" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="XPf-eF-idA"/>
-                    <constraint firstItem="SVh-iL-06V" firstAttribute="width" secondItem="sEF-ZT-uEj" secondAttribute="width" id="a7u-RS-hml"/>
+                    <constraint firstItem="sEF-ZT-uEj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gNY-GY-ySN"/>
                     <constraint firstItem="Nmh-IN-LTs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="hRn-eg-ILv"/>
                     <constraint firstItem="SVh-iL-06V" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="jAD-bA-2lx"/>
                     <constraint firstItem="SVh-iL-06V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="l8h-gs-9CK"/>
                     <constraint firstItem="sEF-ZT-uEj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mH4-8G-3dv"/>
-                    <constraint firstItem="SVh-iL-06V" firstAttribute="centerY" secondItem="sEF-ZT-uEj" secondAttribute="centerY" id="rcM-U6-lxr"/>
+                    <constraint firstItem="SVh-iL-06V" firstAttribute="width" secondItem="sEF-ZT-uEj" secondAttribute="width" id="qG5-vA-zLI"/>
+                    <constraint firstItem="sEF-ZT-uEj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xVY-Dr-3BG"/>
                     <constraint firstItem="sEF-ZT-uEj" firstAttribute="top" secondItem="PsN-up-68C" secondAttribute="bottom" constant="-33" id="xY1-bi-LDA"/>
                 </constraints>
                 <variation key="default">
@@ -57,18 +72,18 @@
                         <exclude reference="Nmh-IN-LTs"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="Sa6-Hv-Ysh"/>
-                        <exclude reference="hRn-eg-ILv"/>
                         <exclude reference="E5l-nH-rSt"/>
-                        <exclude reference="RuP-Jn-zfa"/>
                         <exclude reference="XPf-eF-idA"/>
-                        <exclude reference="a7u-RS-hml"/>
                         <exclude reference="jAD-bA-2lx"/>
                         <exclude reference="l8h-gs-9CK"/>
-                        <exclude reference="rcM-U6-lxr"/>
-                        <exclude reference="Vdq-vs-HkW"/>
+                        <exclude reference="qG5-vA-zLI"/>
+                        <exclude reference="gNY-GY-ySN"/>
                         <exclude reference="mH4-8G-3dv"/>
+                        <exclude reference="xVY-Dr-3BG"/>
                         <exclude reference="xY1-bi-LDA"/>
+                        <exclude reference="Sa6-Hv-Ysh"/>
+                        <exclude reference="hRn-eg-ILv"/>
+                        <exclude reference="Vdq-vs-HkW"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -78,18 +93,18 @@
                         <include reference="Nmh-IN-LTs"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="Sa6-Hv-Ysh"/>
-                        <include reference="hRn-eg-ILv"/>
                         <include reference="E5l-nH-rSt"/>
-                        <include reference="RuP-Jn-zfa"/>
                         <include reference="XPf-eF-idA"/>
-                        <include reference="a7u-RS-hml"/>
                         <include reference="jAD-bA-2lx"/>
                         <include reference="l8h-gs-9CK"/>
-                        <include reference="rcM-U6-lxr"/>
-                        <include reference="Vdq-vs-HkW"/>
+                        <include reference="qG5-vA-zLI"/>
+                        <include reference="gNY-GY-ySN"/>
                         <include reference="mH4-8G-3dv"/>
+                        <include reference="xVY-Dr-3BG"/>
                         <include reference="xY1-bi-LDA"/>
+                        <include reference="Sa6-Hv-Ysh"/>
+                        <include reference="hRn-eg-ILv"/>
+                        <include reference="Vdq-vs-HkW"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -98,7 +113,7 @@
                 <outlet property="titleLabel" destination="PsN-up-68C" id="lbY-ps-MXL"/>
                 <outlet property="wordCountLabel" destination="Nmh-IN-LTs" id="inE-Bk-fqJ"/>
             </connections>
-            <point key="canvasLocation" x="280" y="249.5"/>
+            <point key="canvasLocation" x="279.5" y="249.5"/>
         </tableViewCell>
     </objects>
     <resources>

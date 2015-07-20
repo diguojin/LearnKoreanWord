@@ -53,7 +53,9 @@
         cell = [[LexiconViewCell alloc]init];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.titleLabel.text = [_lexiconsMArray[indexPath.row] lexicon];
+    Lexicon *lexicon = _lexiconsMArray[indexPath.row];
+    cell.titleLabel.text = [lexicon lexicon];
+    cell.imgView.image = [UIImage imageNamed:[lexicon imgName]];
     cell.wordCountLabel.text = [NSString stringWithFormat:@"单词数: %ld", (long)[_lexiconsMArray[indexPath.row] wordCount] ];
     return cell;
 }

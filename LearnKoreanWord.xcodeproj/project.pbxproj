@@ -38,6 +38,8 @@
 		885FA9011B58F97900190CCD /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8FA1B58F97900190CCD /* UUColor.m */; };
 		885FA9021B58F97900190CCD /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA8FC1B58F97900190CCD /* UULineChart.m */; };
 		885FA9051B5B4CED00190CCD /* WrongWordsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885FA9041B5B4CED00190CCD /* WrongWordsListViewController.m */; };
+		885FA9071B5CA7A200190CCD /* LKTDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 885FA9061B5CA7A200190CCD /* LKTDB.db */; };
+		885FA9081B5CA7A200190CCD /* LKTDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 885FA9061B5CA7A200190CCD /* LKTDB.db */; };
 		88A8F6841B452AAD00277EEC /* WordListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6821B452AAD00277EEC /* WordListViewCell.m */; };
 		88A8F6851B452AAD00277EEC /* WordListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A8F6831B452AAD00277EEC /* WordListViewCell.xib */; };
 		88A8F68B1B4634A200277EEC /* BigButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F68A1B4634A200277EEC /* BigButtonView.m */; };
@@ -47,8 +49,6 @@
 		88A8F69D1B46AA6200277EEC /* WordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F69C1B46AA6200277EEC /* WordList.m */; };
 		88A8F6A31B4A6AE900277EEC /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6A21B4A6AE900277EEC /* UIView+Shadow.m */; };
 		88A8F6A61B4A755100277EEC /* CRGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8F6A51B4A755100277EEC /* CRGradientLabel.m */; };
-		88FA4BA21B500F9B00321771 /* LKTDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BA11B500F9B00321771 /* LKTDB.db */; };
-		88FA4BA31B500F9B00321771 /* LKTDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 88FA4BA11B500F9B00321771 /* LKTDB.db */; };
 		88FA4BA71B5010E700321771 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BA61B5010E700321771 /* MBProgressHUD.m */; };
 		88FA4BA81B5010E700321771 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BA61B5010E700321771 /* MBProgressHUD.m */; };
 		88FA4BAB1B50139500321771 /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FA4BAA1B50139500321771 /* UIViewController+MBProgressHUD.m */; };
@@ -142,6 +142,7 @@
 		885FA8FC1B58F97900190CCD /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 		885FA9031B5B4CED00190CCD /* WrongWordsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrongWordsListViewController.h; sourceTree = "<group>"; };
 		885FA9041B5B4CED00190CCD /* WrongWordsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrongWordsListViewController.m; sourceTree = "<group>"; };
+		885FA9061B5CA7A200190CCD /* LKTDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = LKTDB.db; sourceTree = "<group>"; };
 		88A8F6811B452AAD00277EEC /* WordListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListViewCell.h; sourceTree = "<group>"; };
 		88A8F6821B452AAD00277EEC /* WordListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListViewCell.m; sourceTree = "<group>"; };
 		88A8F6831B452AAD00277EEC /* WordListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordListViewCell.xib; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		88A8F6A21B4A6AE900277EEC /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
 		88A8F6A41B4A755100277EEC /* CRGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGradientLabel.h; sourceTree = "<group>"; };
 		88A8F6A51B4A755100277EEC /* CRGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRGradientLabel.m; sourceTree = "<group>"; };
-		88FA4BA11B500F9B00321771 /* LKTDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = LKTDB.db; sourceTree = "<group>"; };
 		88FA4BA51B5010E700321771 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		88FA4BA61B5010E700321771 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		88FA4BA91B50139500321771 /* UIViewController+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBProgressHUD.h"; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 		8846144E1B3E40E000FE3261 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				88FA4BA11B500F9B00321771 /* LKTDB.db */,
+				885FA9061B5CA7A200190CCD /* LKTDB.db */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -598,7 +598,7 @@
 				8846149B1B42855300FE3261 /* LexiconViewCell.xib in Resources */,
 				884614341B3E3FF400FE3261 /* LaunchScreen.xib in Resources */,
 				88FA4BB21B53684B00321771 /* MyPageTableViewCell.xib in Resources */,
-				88FA4BA21B500F9B00321771 /* LKTDB.db in Resources */,
+				885FA9071B5CA7A200190CCD /* LKTDB.db in Resources */,
 				884614311B3E3FF400FE3261 /* Images.xcassets in Resources */,
 				884614A61B43FD3400FE3261 /* ChapterViewCell.xib in Resources */,
 			);
@@ -609,8 +609,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FA4BB31B53684B00321771 /* MyPageTableViewCell.xib in Resources */,
+				885FA9081B5CA7A200190CCD /* LKTDB.db in Resources */,
 				88FA4BC21B56418700321771 /* ReviewViewCell.xib in Resources */,
-				88FA4BA31B500F9B00321771 /* LKTDB.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

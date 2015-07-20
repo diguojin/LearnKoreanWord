@@ -82,7 +82,7 @@
             colorLabel.gradientColors = @[[UIColor redColor],[UIColor orangeColor]];
             cell.backgroundView = colorLabel;
             cell.iconImgView.image = [UIImage imageNamed:@"calendar_white"];
-            cell.titleLabel.text = @"今日新增词汇量";
+            cell.titleLabel.text = @"今日新增答对的单词";
             cell.titleLabel.textColor = [UIColor whiteColor];
             //cell.NumberLabel.text = [NSString stringWithFormat:@"%ld", (long)_totalMemWordsCount];
             cell.NumberLabel.textColor = [UIColor whiteColor];
@@ -92,7 +92,7 @@
         }
         case 1:{
             cell.iconImgView.image = [UIImage imageNamed:@"total"];
-            cell.titleLabel.text = @"词汇量";
+            cell.titleLabel.text = @"答对单词总数";
             cell.titleLabel.textColor = [UIColor grayColor];
             [cell.NumberLabel dd_setNumber:[NSNumber numberWithLong:(long)_totalMemWordsCount] format:nil];
 
@@ -101,7 +101,7 @@
         }
         case 2:{
             [cell setupChartViewWithIndexPath:indexPath];
-            cell.titleLabel.text = @"七日间复习统计";
+            cell.titleLabel.text = @"七日间复习单词量统计";
             cell.iconImgView.image = [UIImage imageNamed:@"total"];
             cell.NumberLabel.hidden = YES;
             break;
