@@ -87,7 +87,7 @@
 {
     SpellingWordViewController *SWVC = [[SpellingWordViewController alloc]init];
     [self.navigationController pushViewController:SWVC animated:YES];
-    NSLog(@"开始复习");
+    //NSLog(@"开始复习");
 }
 
 #pragma mark - Table view data source

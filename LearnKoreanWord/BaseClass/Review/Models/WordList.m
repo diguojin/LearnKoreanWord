@@ -68,7 +68,7 @@
     
     if (_index + 1 < [self count]) {
         _index ++;
-        NSLog(@"%@", _wordListMArray[_index]);
+        //NSLog(@"%@", _wordListMArray[_index]);
         return 1;
     }else if (_index + 1 == [self count])
     {
@@ -86,9 +86,9 @@
         if (![randomNumArray containsObject:[NSNumber numberWithInteger:_index]]) {
             randomNumArray[arc4random()%4] = [NSNumber numberWithInteger:_index];
         }
-        for (NSNumber *nb in randomNumArray) {
-            NSLog(@"%@", nb);
-        }
+//        for (NSNumber *nb in randomNumArray) {
+//            //NSLog(@"%@", nb);
+//        }
         return randomNumArray;
     }
     return nil;

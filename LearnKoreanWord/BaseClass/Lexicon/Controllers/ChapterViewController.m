@@ -76,7 +76,7 @@
     ChapterWordListViewController * CWVC = [[ChapterWordListViewController alloc]init];
     CWVC.chapterID = [_chaptersMArray[indexPath.row] chapterId];
 
-    NSLog(@"%ld",(long)[_chaptersMArray[indexPath.row] chapterId]);
+    //NSLog(@"%ld",(long)[_chaptersMArray[indexPath.row] chapterId]);
     [self.navigationController pushViewController:CWVC animated:YES];
 }
                             

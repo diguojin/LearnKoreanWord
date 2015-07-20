@@ -84,9 +84,8 @@
             cell.iconImgView.image = [UIImage imageNamed:@"calendar_white"];
             cell.titleLabel.text = @"今日新增答对的单词";
             cell.titleLabel.textColor = [UIColor whiteColor];
-            //cell.NumberLabel.text = [NSString stringWithFormat:@"%ld", (long)_totalMemWordsCount];
             cell.NumberLabel.textColor = [UIColor whiteColor];
-            NSLog(@"%ld",(long)[_mydb getMyTodayWordsMemWordsCount]);
+            //NSLog(@"%ld",(long)[_mydb getMyTodayWordsMemWordsCount]);
             [cell.NumberLabel dd_setNumber:[NSNumber numberWithLong:(long)[_mydb getMyTodayWordsMemWordsCount]] format:nil];
             break;
         }

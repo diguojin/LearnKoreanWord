@@ -66,7 +66,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%ld", (long)[_lexiconsMArray[indexPath.row] lexiconId]);
+    //NSLog(@"%ld", (long)[_lexiconsMArray[indexPath.row] lexiconId]);
     ChapterViewController *CVC = [[ChapterViewController alloc]init];
     CVC.lexiconID = [_lexiconsMArray[indexPath.row] lexiconId];
     CVC.chapterName = [_lexiconsMArray[indexPath.row] lexicon];

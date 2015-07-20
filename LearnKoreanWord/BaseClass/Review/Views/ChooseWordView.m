@@ -55,7 +55,7 @@
 
 - (void)tapAction:(UIGestureRecognizer *)tap
 {
-    NSLog(@"tapAction");
+    //NSLog(@"tapAction");
 }
 
 @end

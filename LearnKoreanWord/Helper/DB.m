@@ -35,9 +35,9 @@
     FMResultSet *rs = [_fmdb executeQuery:@"SELECT * from my_words"];
     NSInteger memWordsCount = 0;
     while ([rs next]) {
-        NSLog(@"totalWordsCount:%d memWordsCount:%d",
-              [rs intForColumn:@"totalWordsCount"],
-              [rs intForColumn:@"memWordsCount"]);
+//        NSLog(@"totalWordsCount:%d memWordsCount:%d",
+//              [rs intForColumn:@"totalWordsCount"],
+//              [rs intForColumn:@"memWordsCount"]);
 
         memWordsCount = [rs intForColumn:@"memWordsCount"];
     }
@@ -58,9 +58,9 @@
     FMResultSet *rs = [_fmdb executeQuery:@"SELECT * from my_words"];
     NSInteger totalWordsCount = 0;
     while ([rs next]) {
-        NSLog(@"totalWordsCount:%d memWordsCount:%d",
-              [rs intForColumn:@"totalWordsCount"],
-              [rs intForColumn:@"memWordsCount"]);
+//        NSLog(@"totalWordsCount:%d memWordsCount:%d",
+//              [rs intForColumn:@"totalWordsCount"],
+//              [rs intForColumn:@"memWordsCount"]);
         
         totalWordsCount = [rs intForColumn:@"totalWordsCount"];
     }
@@ -80,9 +80,9 @@
     FMResultSet *rs = [_fmdb executeQuery:@"select * from lexicon"];
     NSMutableArray *arr = [[NSMutableArray alloc]init];
     while ([rs next]) {
-        NSLog(@"%d %@",
-              [rs intForColumn:@"ID"],
-              [rs stringForColumn:@"Lexicon"]);
+//        NSLog(@"%d %@",
+//              [rs intForColumn:@"ID"],
+//              [rs stringForColumn:@"Lexicon"]);
         Lexicon *lexicon = [[Lexicon alloc]init];
         lexicon.lexicon = [rs stringForColumn:@"Lexicon"];
         lexicon.lexiconId = [rs intForColumn:@"ID"];
@@ -135,14 +135,14 @@
 {
     //获取我的沙盒documents文件夹的路径
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSLog(@"%@",documentsPath);
+//    NSLog(@"%@",documentsPath);
     //生成我要生成的sqlitePath文件路径
     NSString *sqlitePath = [documentsPath stringByAppendingPathComponent:targetName];//@"my.sqlite"
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     NSString *bundleFilePath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];//@"LKTDB.db"
-    NSLog(@"%@",bundleFilePath);
+//    NSLog(@"%@",bundleFilePath);
 
     if (![fileManager fileExistsAtPath:sqlitePath] && bundleFilePath) {
         //复制boundle中得sqlite文件复制到 沙盒的路径下
@@ -238,7 +238,7 @@
         
         NSTimeInterval timeStamp = [self getTimeStampNow];
         
-        NSLog(@"%ld", (long)timeStamp);
+//        NSLog(@"%ld", (long)timeStamp);
         
         [_fmdb executeUpdate:@"UPDATE word_list set rem_param = ? , createTime = ? where chapter = ?", [NSNumber numberWithDouble:memParam], [NSNumber numberWithInteger:timeStamp], [NSNumber numberWithInteger: chapter]];
     }
@@ -274,9 +274,7 @@
 {
     [_fmdb open];
     if (word && word.wordId) {
-        BOOL success = [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes + 1 WHERE wid = ?", [NSNumber numberWithInteger:word.wordId]];
-        NSLog(@"wordId:%ld chapter:%ld zh:%@ kr:%@", (long)word.wordId, (long)word.chapter, word.zh, word.kr);
-        NSLog(@"update %d",success);
+        [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = wrongTimes + 1 WHERE wid = ?", [NSNumber numberWithInteger:word.wordId]];
     }
     [_fmdb close];
 }
@@ -307,7 +305,6 @@
     [_fmdb open];
     if (word && word.wordId) {
         [_fmdb executeUpdate:@"UPDATE word_list SET wrongTimes = ? WHERE wid = ?", [NSNumber numberWithInteger:count], [NSNumber numberWithInteger:word.wordId]];
-        NSLog(@"set 0 word :%@",word.kr);
     }
     [_fmdb close];
 }
@@ -430,7 +427,7 @@
         NSTimeInterval passedTimeStamp = [rs doubleForColumn:@"createTime"];
         NSTimeInterval nowTimeStamp = [self getTimeStampNow];
         NSTimeInterval minutes = (nowTimeStamp - passedTimeStamp) / 60;
-        NSLog(@"time : %f", minutes);
+        //NSLog(@"time : %f", minutes);
         //读取更新前的记忆率
         //double oldRemParam = [rs doubleForColumn:@"rem_param"];
         
@@ -593,7 +590,6 @@
  */
 - (NSMutableArray *)getAllWrongWords
 {
-    NSLog(@"-----wrong-----");
     NSMutableArray *arr = [NSMutableArray new];
     [_fmdb open];
     FMResultSet *rs = [_fmdb executeQuery:@"select * from word_list where wrongTimes > 0 order by wrongTimes desc"];
@@ -604,7 +600,6 @@
         word.kr = [rs stringForColumn:@"kr"];
         word.zh = [rs stringForColumn:@"zh"];
         word.wrongTimes = [rs intForColumn:@"wrongTimes"];
-        NSLog(@"-----wrong-----%ld", word.wrongTimes);
         [arr addObject:word];
     }
     [_fmdb close];
