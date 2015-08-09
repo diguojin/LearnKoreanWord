@@ -10,6 +10,7 @@
 #import "ReviewViewCell.h"
 #import "ChapterWordListViewController.h"
 #import "UILabel+FlickerNumber.h"
+#import "MJRefresh.h"
 
 @interface ReviewViewController ()
 
@@ -28,16 +29,40 @@
     _mydb = [DB sharedDBWithName:kTargetDBFile];
     _chaptersReviewedMArray = [_mydb getChapterInfoReviewed];
     
-    _refreshControl = [UIRefreshControl new];
-    [_refreshControl addTarget:self action:@selector(doRefresh) forControlEvents:UIControlEventValueChanged];
-    [_tableView addSubview:_refreshControl];
+//    _refreshControl = [UIRefreshControl new];
+//    [_refreshControl addTarget:self action:@selector(doRefresh) forControlEvents:UIControlEventValueChanged];
+//    [_tableView addSubview:_refreshControl];
+    
+    [self doUpLoad];
+}
+
+- (void)doUpLoad
+{
+    __weak typeof(self) weakSelf = self;
+    
+    // 添加传统的下拉刷新
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    [self.tableView addLegendHeaderWithRefreshingBlock:^{
+        [weakSelf doRefresh];
+    }];
+    
+    // 马上进入刷新状态
+    [self.tableView.legendHeader beginRefreshing];
+    
+    /**
+     也可以这样使用
+     [self.tableView.header beginRefreshing];
+     
+     此时self.tableView.header == self.tableView.legendHeader
+     */
 }
 
 - (void)doRefresh
 {
     _chaptersReviewedMArray = [_mydb getChapterInfoReviewed];
     [_tableView reloadData];
-    [_refreshControl endRefreshing];
+    //[_refreshControl endRefreshing];
+    [self.tableView.legendHeader endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {

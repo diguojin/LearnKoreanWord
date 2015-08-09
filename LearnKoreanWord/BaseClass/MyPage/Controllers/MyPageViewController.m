@@ -7,11 +7,11 @@
 //
 
 #import "MyPageViewController.h"
-#import "DB.h"
 #import "MyPageTableViewCell.h"
 #import "CRGradientLabel.h"
 #import "UILabel+FlickerNumber.h"
 #import "WrongWordsListViewController.h"
+#import "MJRefresh.h"
 
 @interface MyPageViewController ()
 
@@ -32,13 +32,27 @@
     [_tableView registerNib:[UINib nibWithNibName:kMyPageTavleViewCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kMyPageTavleViewCell];
     [self.view addSubview:_tableView];
     
-    _pullDownRefreshControl = [[UIRefreshControl alloc]init];
-    [_pullDownRefreshControl addTarget:self action:@selector(doRefresh) forControlEvents:UIControlEventValueChanged];
-    [_tableView addSubview:_pullDownRefreshControl];
-    
+//    _pullDownRefreshControl = [[UIRefreshControl alloc]init];
+//    [_pullDownRefreshControl addTarget:self action:@selector(doRefresh) forControlEvents:UIControlEventValueChanged];
+//    [_tableView addSubview:_pullDownRefreshControl];
+    [self doUpLoad];
     UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"错词单" style:UIBarButtonItemStyleDone target:self action:@selector(pushToWrongWordsList)];
     
     self.navigationItem.rightBarButtonItem = btn;
+}
+
+- (void)doUpLoad
+{
+    __weak typeof(self) weakSelf = self;
+    
+    // 添加传统的下拉刷新
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    [self.tableView addLegendHeaderWithRefreshingBlock:^{
+        [weakSelf doRefresh];
+    }];
+    
+    // 马上进入刷新状态
+    [self.tableView.legendHeader beginRefreshing];
 }
 
 - (void)pushToWrongWordsList
@@ -51,7 +65,8 @@
 {
     _totalMemWordsCount = [_mydb getMyWordsMemWordsCount];
     [_tableView reloadData];
-    [_pullDownRefreshControl endRefreshing];
+    //[_pullDownRefreshControl endRefreshing];
+    [self.tableView.legendHeader endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {

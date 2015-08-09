@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WordList.h"
+#import "SpellingWordView.h"
 
 @interface SpellingWordViewController : UIViewController
+
+@property (nonatomic, strong) WordList *wordList;
+
+@property (nonatomic, strong) SpellingWordView *SWV;
 
 @end

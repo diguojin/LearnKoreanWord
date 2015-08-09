@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface MyPageViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, assign) NSInteger totalMemWordsCount;
